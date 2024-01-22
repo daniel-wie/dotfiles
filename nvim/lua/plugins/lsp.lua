@@ -37,7 +37,7 @@ return {
 			lspconfig.julials.setup({})
 
 			vim.api.nvim_create_autocmd('LspAttach', {
-				group = vim.api.nvim_create_augroup('UserLspConfig', {}),
+				group = vim.api.nvim_create_augroup('UserLspConfig', { clear = true }),
 
 				callback = function(ev)
 					-- Enable completion triggered by <c-x><c-o>
