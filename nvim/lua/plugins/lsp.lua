@@ -21,6 +21,7 @@ return {
 		"neovim/nvim-lspconfig",
 		config = function()
 			local lspconfig = require("lspconfig")
+			local capabilities = require("cmp_nvim_lsp").default_capabilities() -- add lsp-powered completion
 
 			vim.api.nvim_create_autocmd("LspAttach", {
 				group = vim.api.nvim_create_augroup("UserLspConfig", { clear = true }),
@@ -76,10 +77,11 @@ return {
 					},
 				},
 				cmd = { vim.fn.exepath("lua-language-server") },
+				capabilities = capabilities,
 			})
 
 			-- Julia
-			lspconfig.julials.setup({})
+			lspconfig.julials.setup({ capabilities = capabilities })
 		end,
 	},
 }
