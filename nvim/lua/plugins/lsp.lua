@@ -76,7 +76,6 @@ return {
 						},
 					},
 				},
-				cmd = { vim.fn.exepath("lua-language-server") },
 				capabilities = capabilities,
 			})
 
