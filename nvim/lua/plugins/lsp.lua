@@ -78,9 +78,6 @@ return {
 					},
 				},
 				capabilities = capabilities,
-
-				-- only for windows
-				-- cmd = vim.fn.exepath("lua-language-server"),
 			})
 
 			-- Julia
