@@ -3,8 +3,6 @@ return {
 
 	config = function()
 		local null_ls = require("null-ls")
-		local h = require("null-ls.helpers")
-		local methods = require("null-ls.methods")
 
 		null_ls.setup({
 			sources = {
