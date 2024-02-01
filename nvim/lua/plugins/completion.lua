@@ -1,14 +1,14 @@
 return {
 	"hrsh7th/nvim-cmp",
 	dependencies = {
-		"hrsh7th/cmp-nvim-lsp",   -- lsp
-		"hrsh7th/cmp-path",       -- path completion
-		"hrsh7th/cmp-buffer",     -- completion from buffer
-		"L3MON4D3/LuaSnip",       -- luasnip
+		"hrsh7th/cmp-nvim-lsp", -- lsp
+		"hrsh7th/cmp-path", -- path completion
+		"hrsh7th/cmp-buffer", -- completion from buffer
+		"L3MON4D3/LuaSnip", -- luasnip
 		"saadparwaiz1/cmp_luasnip", -- luasnip to cmp
 		"rafamadriz/friendly-snippets", -- vscode snippets
 		"kdheepak/cmp-latex-symbols", -- latex symbols
-		"onsails/lspkind.nvim",   -- pictograms
+		"onsails/lspkind.nvim", -- pictograms
 	},
 	config = function()
 		local cmp = require("cmp")
@@ -29,7 +29,7 @@ return {
 				["<C-f>"] = cmp.mapping.scroll_docs(4),
 				["<C-Space>"] = cmp.mapping.complete(),
 				["<C-e>"] = cmp.mapping.abort(),
-				["<CR>"] = cmp.mapping.confirm({ select = true }),
+				["<Tab>"] = cmp.mapping.confirm({ select = true }),
 			}),
 			sources = cmp.config.sources({
 				{ name = "nvim_lsp" },
@@ -43,10 +43,10 @@ return {
 					with_text = true,
 					menu = {
 						nvim_lsp = "LSP",
-						luasnip = "SNIP",
-						latex_symbols = "LATEX",
+						luasnip = "SNI",
+						latex_symbols = "TEX",
 						buffer = "BUF",
-						path = "PATH",
+						path = "PAT",
 					},
 				}),
 			},
