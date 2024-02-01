@@ -43,10 +43,10 @@ return {
 					with_text = true,
 					menu = {
 						nvim_lsp = "LSP",
-						luasnip = "SNIP",
-						latex_symbols = "LATEX",
+						luasnip = "SNI",
+						latex_symbols = "TEX",
 						buffer = "BUF",
-						path = "PATH",
+						path = "PAT",
 					},
 				}),
 			},
