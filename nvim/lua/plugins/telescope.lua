@@ -32,7 +32,8 @@ return {
 			},
 			pickers = {
 				find_files = {
+				},
 			},
 		},
-	},
+	}
 }
