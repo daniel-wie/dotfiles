@@ -32,9 +32,8 @@ return {
 			},
 			pickers = {
 				find_files = {
-					find_command = { "fdfind", "--type", "f", "--follow", "--hidden" },
 				},
 			},
 		},
-	},
+	}
 }

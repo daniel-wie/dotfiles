@@ -4,7 +4,7 @@ return {
 		config = function()
 			require("mason").setup({
 				-- only for windows
-				-- PATH = "prepend",
+				PATH = "prepend",
 			})
 		end,
 	},
@@ -14,6 +14,7 @@ return {
 			require("mason-lspconfig").setup({
 				ensure_installed = {
 					"lua_ls",
+					"texlab",
 				},
 			})
 		end,
@@ -82,6 +83,9 @@ return {
 
 			-- Julia
 			lspconfig.julials.setup({ capabilities = capabilities })
+
+			-- LaTeX
+			lspconfig.texlab.setup({ capabilities = capabilities })
 		end,
 	},
 }
