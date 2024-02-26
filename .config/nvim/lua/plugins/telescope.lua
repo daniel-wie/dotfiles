@@ -31,9 +31,8 @@ return {
 				sorting_strategy = "ascending",
 			},
 			pickers = {
-				find_files = {
-				},
+				find_files = { "fdfind", "--type", "f", "--follow", "--hidden" },
 			},
 		},
-	}
+	},
 }

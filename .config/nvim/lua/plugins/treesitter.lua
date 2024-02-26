@@ -26,7 +26,7 @@ return {
 				"latex", -- use vimtex as source instead
 			},
 			highlight = {
-				enable = true
+				enable = true,
 			},
 			incremental_selection = {
 				enable = true,
@@ -38,7 +38,7 @@ return {
 				},
 			},
 			indent = {
-				enable = true
+				enable = true,
 			},
 			textobjects = {
 				move = {

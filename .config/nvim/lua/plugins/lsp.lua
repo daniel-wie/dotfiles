@@ -4,7 +4,7 @@ return {
 		config = function()
 			require("mason").setup({
 				-- only for windows
-				PATH = "prepend",
+				-- PATH = "prepend",
 			})
 		end,
 	},
