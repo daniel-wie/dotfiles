@@ -10,5 +10,8 @@ return {
 			aux_dir = "build",
 			out_dir = "",
 		}
+		vim.g.vimtex_quickfix_ignore_filters = {
+			"Overfull .hbox"
+		}
 	end,
 }
