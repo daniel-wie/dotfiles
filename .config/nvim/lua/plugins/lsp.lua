@@ -15,12 +15,15 @@ return {
 				ensure_installed = {
 					"lua_ls",
 					"texlab",
+					"ltex"
 				},
 			})
 		end,
 	},
 	{
 		"neovim/nvim-lspconfig",
+		dependencies = { "barreiroleo/ltex_extra.nvim" },
+
 		config = function()
 			local lspconfig = require("lspconfig")
 			local capabilities = require("cmp_nvim_lsp").default_capabilities() -- add lsp-powered completion
@@ -84,8 +87,38 @@ return {
 			-- Julia
 			lspconfig.julials.setup({ capabilities = capabilities })
 
-			-- LaTeX
+			-- TexLab (completion etc.)
 			lspconfig.texlab.setup({ capabilities = capabilities })
+
+			-- add custom dictionary for exceptions
+			local function words()
+				local result = {}
+				local path = vim.fn.stdpath("config") .. "/spell/en.utf-8.add"
+				for word in io.open(path, "r"):lines() do
+					table.insert(result, word)
+				end
+				return result
+			end
+
+			-- LTeX (spelling & grammar)
+			lspconfig.ltex.setup({
+				on_attach = function(client, bufnr)
+					require("ltex_extra").setup({
+						load_langs = { "en-US" },
+						path = ".vscode", -- be nice to other people
+					})
+				end,
+				settings = {
+					ltex = {
+						language = "en-US",
+						dictionary = {
+							["en-US"] = words() or {},
+						},
+					},
+				},
+				capabilities = capabilities,
+				-- flags = lspconfig.lsp_flags,
+			})
 		end,
 	},
 }
