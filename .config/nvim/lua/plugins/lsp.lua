@@ -72,6 +72,16 @@ return {
 				end,
 			})
 
+			-- Diagnostic mappings
+			local function nmap(lhs, rhs, desc)
+				vim.keymap.set("n", lhs, rhs, { desc = desc })
+			end
+
+			nmap("<leader>do", vim.diagnostic.open_float, "Diagnostic Open float")
+			nmap("]d", vim.diagnostic.goto_next, "Diagnostic Next")
+			nmap("[d", vim.diagnostic.goto_prev, "Diagnostic Previous")
+			nmap("<leader>dl", vim.diagnostic.setloclist, "Diagnostic List")
+
 			-- Lua
 			lspconfig.lua_ls.setup({
 				settings = {
