@@ -5,13 +5,20 @@ return {
 	"lervag/vimtex",
 	lazy = false,
 	init = function()
-		vim.g.vimtex_view_method = "zathura"
+		if vim.fn.has "win32" == 1 then
+			vim.g.vimtex_view_general_viewer = "SumatraPDF"
+			vim.g.vimtex_view_general_options = "-reuse-instance -forward-search @tex @line @pdf"
+		else
+			vim.g.vimtex_view_method = "zathura"
+		end
+
 		vim.g.vimtex_compiler_latexmk = {
 			aux_dir = "build",
 			out_dir = "",
 		}
 		vim.g.vimtex_quickfix_ignore_filters = {
-			"Overfull .hbox"
+			"Overfull .hbox",
+			"Underfull .hbox"
 		}
 	end,
 }
