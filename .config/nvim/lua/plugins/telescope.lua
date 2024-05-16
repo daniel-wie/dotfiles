@@ -1,5 +1,13 @@
 -- https://github.com/nvim-telescope/telescope.nvim
 
+local function find_files()
+	if vim.fn.has 'win32' then
+		return { find_command = { "fd", "--type", "f", "--follow", "--hidden" } }
+	else
+		return { find_command = { "fdfind", "--type", "f", "--follow", "--hidden" } }
+	end
+end
+
 return {
 	{
 		"nvim-telescope/telescope.nvim",
@@ -31,9 +39,7 @@ return {
 				sorting_strategy = "ascending",
 			},
 			pickers = {
-				find_files = {
-					find_command = { "fdfind", "--type", "f", "--follow", "--hidden" },
-				},
+				find_files = find_files(),
 			},
 		},
 	},
