@@ -11,7 +11,8 @@ return {
 			out_dir = "",
 		}
 		vim.g.vimtex_quickfix_ignore_filters = {
-			"Overfull .hbox"
+			"Overfull .hbox",
+			"Overfull .vbox"
 		}
 	end,
 }
