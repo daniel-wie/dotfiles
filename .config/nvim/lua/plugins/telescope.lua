@@ -1,10 +1,10 @@
 -- https://github.com/nvim-telescope/telescope.nvim
 
 local function find_files()
-	if vim.fn.has 'win32' then
-		return { find_command = { "fd", "--type", "f", "--follow", "--hidden" } }
+	if vim.fn.has("win32") == 1 then
+		return { find_command = { "fd", "--follow", "--hidden" } }
 	else
-		return { find_command = { "fdfind", "--type", "f", "--follow", "--hidden" } }
+		return { find_command = { "fdfind", "--follow", "--hidden" } }
 	end
 end
 

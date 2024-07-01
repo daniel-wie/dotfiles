@@ -5,7 +5,7 @@ return {
 	"lervag/vimtex",
 	lazy = false,
 	init = function()
-		if vim.fn.has "win32" == 1 then
+		if vim.fn.has("win32") == 1 then
 			vim.g.vimtex_view_general_viewer = "SumatraPDF"
 			vim.g.vimtex_view_general_options = "-reuse-instance -forward-search @tex @line @pdf"
 		else
@@ -18,7 +18,7 @@ return {
 		}
 		vim.g.vimtex_quickfix_ignore_filters = {
 			"Overfull .hbox",
-			"Overfull .vbox"
+			"Overfull .vbox",
 		}
 	end,
 }
