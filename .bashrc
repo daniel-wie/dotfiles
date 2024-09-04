@@ -129,9 +129,6 @@ export PATH="$PATH:/home/daniel/.local/share/texlive/2023/bin/x86_64-linux"
 export MANPATH="$MANPATH:/home/daniel/.local/share/texlive/2023/texmf-dist/doc/man"
 export INFOPATH="$INFOPATH:/home/daniel/.local/share/texlive/2023/texmf-dist/doc/info"
 
-# make adding by url possible
-export JULIA_PKG_USE_CLI_GIT=true
-
 # >>> juliaup initialize >>>
 
 # !! Contents within this block are managed by juliaup !!
