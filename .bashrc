@@ -107,25 +107,13 @@ if ! pgrep -u "$USER" ssh-agent > /dev/null; then
     ssh-agent -t 12h > "$XDG_RUNTIME_DIR/ssh-agent.env"
 fi
 if [[ ! -f "$SSH_AUTH_SOCK" ]]; then
-    source "$XDG_RUNTIME_DIR/ssh-agent.env" >/dev/null
+    source "$XDG_RUNTIME_DIR/ssh-agent.env" > /dev/null
 fi
 
-# add texlive to path
-export PATH="$PATH:/home/daniel/.local/share/texlive/2023/bin/x86_64-linux"
-export MANPATH="$MANPATH:/home/daniel/.local/share/texlive/2023/texmf-dist/doc/man"
-export INFOPATH="$INFOPATH:/home/daniel/.local/share/texlive/2023/texmf-dist/doc/info"
+# texlive
+export PATH="$PATH:$HOME/.local/share/texlive/2024/bin/x86_64-linux"
+export MANPATH="$MANPATH:$HOME/.local/share/texlive/2024/texmf-dist/doc/man"
+export INFOPATH="$INFOPATH:$HOME/.local/share/texlive/2024/texmf-dist/doc/info"
 
-# >>> juliaup initialize >>>
-
-# !! Contents within this block are managed by juliaup !!
-
-case ":$PATH:" in
-    *:/home/daniel/.juliaup/bin:*)
-        ;;
-
-    *)
-        export PATH=/home/daniel/.juliaup/bin${PATH:+:${PATH}}
-        ;;
-esac
-
-# <<< juliaup initialize <<<
+# julia
+export PATH=$HOME/.juliaup/bin:$PATH
