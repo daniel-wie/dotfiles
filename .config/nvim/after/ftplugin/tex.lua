@@ -1,4 +1,4 @@
-vim.opt.colorcolumn = { "90" }
+vim.opt_local.colorcolumn = { "90" }
 
 -- Completion
 local cmp = require("cmp")
