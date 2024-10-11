@@ -1,6 +1,17 @@
 # This script does the same as gnu stow but by hand...
-New-Item -Path C:\Users\balld\AppData\Local\nvim -ItemType SymbolicLink -Target C:\Users\balld\.dotfiles\.config\nvim
-New-Item -Path C:\Users\balld\AppData\Roaming\fd -ItemType SymbolicLink -Target C:\Users\balld\.dotfiles\.config\fd
-New-Item -Path C:\Users\balld\.julia\config -ItemType SymbolicLink -Target C:\Users\balld\.dotfiles\.julia\config
-New-Item -Path C:\Users\balld\.prettierrc -ItemType SymbolicLink -Target C:\Users\balld\.dotfiles\.prettierrc
-New-Item -Path D:\Documents\PowerShell\Microsoft.PowerShell_profile.ps1 -ItemType SymbolicLink -Target C:\Users\balld\.dotfiles\PowerShell_profile.ps1
+
+function New-SymbolicLink {
+	param (
+		[Parameter(Mandatory)][string]$Path,
+		[Parameter(Mandatory)][string]$Target
+	)
+
+	New-Item -Path $Path -ItemType SymbolicLink -Target $Target
+}
+
+New-SymbolicLink $HOME\AppData\Local\nvim $HOME\.dotfiles\.config\nvim
+New-SymbolicLink $HOME\AppData\Roaming\fd $HOME\.dotfiles\.config\fd
+New-SymbolicLink $HOME\.julia\config $HOME\.dotfiles\.julia\config
+New-SymbolicLink $HOME\.prettierrc $HOME\.dotfiles\.prettierrc
+New-SymbolicLink $HOME\.ssh\config $HOME\.dotfiles\.ssh\config
+New-SymbolicLink D:\Documents\PowerShell\Microsoft.PowerShell_profile.ps1 $HOME\.dotfiles\PowerShell_profile.ps1
