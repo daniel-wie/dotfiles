@@ -1,18 +1,35 @@
-# This script does the same as gnu stow but by hand...
+# This script sets everything up on Windows.
+# It needs to be run in the top directory of dotfiles.
 
-function New-SymbolicLink {
-	param (
-		[Parameter(Mandatory)][string]$Path,
-		[Parameter(Mandatory)][string]$Target
-	)
+function Download {
+	param ($Url)
 
-	New-Item -Path $Path -ItemType SymbolicLink -Target $Target
+	Invoke-WebRequest -Uri $Url -OutFile (Split-Path $Url -Leaf)
 }
 
-New-SymbolicLink $HOME\AppData\Local\nvim $HOME\.dotfiles\.config\nvim
-New-SymbolicLink $HOME\AppData\Roaming\fd $HOME\.dotfiles\.config\fd
-New-SymbolicLink $HOME\.julia\config $HOME\.dotfiles\.julia\config
-New-SymbolicLink $HOME\.julia\environments $HOME\.dotfiles\.julia\environments
-New-SymbolicLink $HOME\.prettierrc $HOME\.dotfiles\.prettierrc
-New-SymbolicLink $HOME\.ssh\config $HOME\.dotfiles\.ssh\config
-New-SymbolicLink D:\Documents\PowerShell\Microsoft.PowerShell_profile.ps1 $HOME\.dotfiles\PowerShell_profile.ps1
+function New-SymbolicLink {
+	param ($Path, $Target)
+
+	New-Item -Path $Path -ItemType SymbolicLink -Target $Target -Force
+}
+
+# Texlive
+Download https://mirror.ctan.org/systems/texlive/tlnet/install-tl-windows.exe
+Start-Process install-tl-windows.exe -Wait
+rm install-tl-windows.exe
+
+# Julia
+winget install julia -s msstore
+New-SymbolicLink $HOME\.julia\config $PSScriptRoot\home\.julia\config
+New-SymbolicLink $HOME\.julia\environments $PSScriptRoot\home\.julia\environments
+
+# Neovim
+Download https://github.com/neovim/neovim/releases/latest/download/nvim-win64.msi
+Start-Process nvim-win64.msi -Wait
+rm nvim-win64.msi
+New-SymbolicLink $HOME\AppData\Local\nvim $PSScriptRoot\home\.config\nvim
+
+New-SymbolicLink $HOME\AppData\Roaming\fd $PSScriptRoot\home\.config\fd
+New-SymbolicLink $HOME\.prettierrc $PSScriptRoot\home\.prettierrc
+New-SymbolicLink $HOME\.ssh\config $PSScriptRoot\home\.ssh\config
+New-SymbolicLink D:\Documents\PowerShell\Microsoft.PowerShell_profile.ps1 $PSScriptRoot\PowerShell_profile.ps1
