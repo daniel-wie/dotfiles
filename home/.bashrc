@@ -16,8 +16,8 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
+HISTSIZE=10000
+HISTFILESIZE=10000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -118,6 +118,13 @@ export INFOPATH="$INFOPATH:$HOME/.local/share/texlive/2024/texmf-dist/doc/info"
 # julia
 export PATH=$HOME/.juliaup/bin:$PATH
 
+# node version manager
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# default programs
+export BROWSER="firefox"
+export VISUAL="nvim"
+export EDITOR=$VISUAL
+export READER="zathura"
