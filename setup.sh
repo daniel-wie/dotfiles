@@ -1,10 +1,5 @@
 #!/bin/bash
 
-# neovim
-curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
-chmod u+x nvim.appimage
-mv nvim.appimage $HOME/.local/bin/nvim
-
 # texlive
 curl -LO https://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
 zcat < install-tl-unx.tar.gz | tar xf -
