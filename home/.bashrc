@@ -110,24 +110,7 @@ if [[ ! -f "$SSH_AUTH_SOCK" ]]; then
     source "$XDG_RUNTIME_DIR/ssh-agent.env" > /dev/null
 fi
 
-# add ~/.local/bin to PATH
-export PATH=$HOME/.local/bin:$PATH
-
-# texlive
-export PATH="$PATH:$HOME/.local/share/texlive/2024/bin/x86_64-linux"
-export MANPATH="$MANPATH:$HOME/.local/share/texlive/2024/texmf-dist/doc/man"
-export INFOPATH="$INFOPATH:$HOME/.local/share/texlive/2024/texmf-dist/doc/info"
-
-# julia
-export PATH=$HOME/.juliaup/bin:$PATH
-
 # node version manager
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# default programs
-export BROWSER="firefox"
-export VISUAL="nvim"
-export EDITOR=$VISUAL
-export READER="zathura"
