@@ -32,4 +32,8 @@ New-SymbolicLink $HOME\AppData\Local\nvim $PSScriptRoot\home\.config\nvim
 New-SymbolicLink $HOME\AppData\Roaming\fd $PSScriptRoot\home\.config\fd
 New-SymbolicLink $HOME\.prettierrc $PSScriptRoot\home\.prettierrc
 New-SymbolicLink $HOME\.ssh\config $PSScriptRoot\home\.ssh\config
-New-SymbolicLink D:\Documents\PowerShell\Microsoft.PowerShell_profile.ps1 $PSScriptRoot\PowerShell_profile.ps1
+
+New-SymbolicLink D:\Documents\PowerShell\Microsoft.PowerShell_profile.ps1 $PSScriptRoot\win\profile.ps1
+New-SymbolicLink "$env:LOCALAPPDATA\Microsoft\Windows` Terminal\Fragments" $PSScriptRoot\win\Fragments
+
+Install-Module Terminal-Icons -Scope CurrentUser

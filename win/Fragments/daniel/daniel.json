@@ -1,0 +1,17 @@
+{
+  "profiles": [
+    {
+      "name": "Daniel",
+      "icon": "ms-appx:///ProfileIcons/pwsh.png",
+      "commandline": "pwsh.exe",
+      "startingDirectory": "%USERPROFILE%",
+      "elevate": false,
+      "colorScheme": "Catppuccin Mocha",
+      "fontSize": 12,
+      "fontFace": "DejaVuSansM Nerd Font",
+      "cursorShape": "filledBox",
+      "padding": "0, 4, -2, 4",
+      "scrollbarState": "hidden"
+    }
+  ]
+}
