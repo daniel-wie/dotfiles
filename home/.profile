@@ -1,8 +1,3 @@
-if [ -f ~/.bashrc ];
-then 
-    .  ~/.bashrc; 
-fi 
-
 # add ~/.local/bin to PATH
 export PATH=$HOME/.local/bin:$PATH
 
@@ -19,3 +14,7 @@ export BROWSER="firefox"
 export VISUAL="nvim"
 export EDITOR=$VISUAL
 export READER="zathura"
+
+if [ -f ~/.bashrc ]; then 
+    .  ~/.bashrc;
+fi 

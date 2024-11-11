@@ -2,7 +2,7 @@
 # https://github.com/Schniz/fnm?tab=readme-ov-file#powershell 
 fnm env --use-on-cd --shell power-shell | Out-String | Invoke-Expression
 
-# set up oh my posh
+# set up Oh My Posh
 # https://ohmyposh.dev/docs/installation/prompt
 oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH/catppuccin_mocha.omp.json" | Invoke-Expression
 
