@@ -1,5 +1,6 @@
 {
   "LuaSnip": { "branch": "master", "commit": "2737edc9e674e537dc0a97e3405658d57d2d31ed" },
+  "barbar.nvim": { "branch": "master", "commit": "53b5a2f34b68875898f0531032fbf090e3952ad7" },
   "catppuccin": { "branch": "main", "commit": "637d99e638bc6f1efedac582f6ccab08badac0c6" },
   "cmp-buffer": { "branch": "main", "commit": "3022dbc9166796b644a841a02de8dd1cc1d311fa" },
   "cmp-latex-symbols": { "branch": "main", "commit": "165fb66afdbd016eaa1570e41672c4c557b57124" },
