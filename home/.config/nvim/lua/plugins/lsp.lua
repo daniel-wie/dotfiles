@@ -114,7 +114,7 @@ return {
 			lspconfig.ltex.setup({
 				on_attach = function(client, bufnr)
 					require("ltex_extra").setup({
-						load_langs = { "en-US" },
+						load_langs = { "en-US", "de-AT" },
 						path = ".vscode", -- be nice to other people
 					})
 				end,
