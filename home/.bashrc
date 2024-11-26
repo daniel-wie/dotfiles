@@ -118,3 +118,8 @@ export NVM_DIR="$HOME/.nvm"
 # Oh My Posh
 # https://ohmyposh.dev/docs/installation/prompt
 eval "$(oh-my-posh init bash --config $HOME/.cache/oh-my-posh/themes/catppuccin_mocha.omp.json)"
+
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"

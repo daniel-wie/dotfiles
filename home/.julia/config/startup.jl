@@ -1,5 +1,9 @@
 ENV["JULIA_PKG_USE_CLI_GIT"] = true
 
+# ensure that PyCall uses the current virtual environment
+# https://github.com/JuliaPy/PyCall.jl?tab=readme-ov-file#python-virtual-environments
+ENV["PYCALL_JL_RUNTIME_PYTHON"] = Sys.which("python")
+
 if isinteractive()
     # Start Revise automatically
     try
