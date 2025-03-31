@@ -11,4 +11,4 @@ stow -v .
 sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator $HOME/.local/bin/kitty 50
 
 # set theme
-kitten themes --reload-in=all Catppuccin-Mocha
+# kitten themes --reload-in=all Catppuccin-Mocha
