@@ -91,7 +91,7 @@ sed -i -E "s/(^hostname=$)/\1'$hostname'/" chroot.sh
 sed -i -E "s/(^keymap=$)/\1'$keymap'/" chroot.sh
 
 cp chroot.sh /mnt/root/chroot.sh
-arch-chroot /mnt bash /root/chroot.sh
+arch-chroot /mnt /root/chroot.sh
 shred -u /mnt/root/chroot.sh
 
 # 4 Reboot
