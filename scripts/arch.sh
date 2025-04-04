@@ -10,22 +10,26 @@
 # username=           # Username for regular user. (default: user)
 # pass_user=          # Passphrase for regular user. (default: pass)
 # hostname=           # hostname of the device. (default: arch)
-# keymap=             # Keyboard mapping for console. (default: de-latin1)
+# keymap=             # Keyboard mapping for console. (default: us-acentos)
 
 # Set default values.
 drive_default=$(lsblk -dno NAME | grep -E '^nvme|^sd|^vd' | head -n 1)
+
 : ${drive:=$drive_default}
 : ${swap_size:=0}
 : ${pass_root:=pass}
 : ${username:=user}
 : ${pass_user:=pass}
 : ${hostname:=arch}
-: ${keymap:=de-latin1}
+: ${keymap:=us-acentos}
+
+# Assert file existence.
+[ -f chroot.sh ] || exit 1
 
 # 1 Pre-installation
 
 # 1.6 Verify UEFI 64-bit boot mode.
-[ $(< /sys/firmware/efi/fw_platform_size) == 64 ] || exit
+[ $(< /sys/firmware/efi/fw_platform_size) == 64 ] || exit 1
 
 # 1.9 Partition the disks
 # Create 1024MB partition for EFI system.
@@ -76,7 +80,7 @@ genfstab -U /mnt >> /mnt/etc/fstab
 
 # 3.2 Change root into the new system
 # Insert values into chroot.sh 
-uuid_root="$(lsblk -dno UUID "/dev/$root_partition")"
+uuid_root=$(lsblk -dno UUID /dev/$root_partition)
 
 sed -i -E "s/(^drive=$)/\1'$drive'/" chroot.sh
 sed -i -E "s/(^uuid_root=$)/\1'$uuid_root'/" chroot.sh
@@ -96,4 +100,4 @@ shred -u /mnt/root/chroot.sh
 (( swap_size > 0 )) && swapoff /mnt/swap/swapfile
 umount -R /mnt
 
-printf '\033[1mInstallation is done, please reboot.\n'
+printf '\033[1mInstallation is done.\n'
