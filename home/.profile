@@ -29,4 +29,9 @@ export VISUAL="nvim"
 export EDITOR=$VISUAL
 export READER="zathura"
 
+# Start Hyprland
+if uwsm check may-start && uwsm select; then
+  exec systemd-cat -t uwsm_start uwsm start default
+fi
+
 [[ -f ~/.bashrc ]] && . ~/.bashrc
