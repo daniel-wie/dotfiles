@@ -2,7 +2,7 @@
 
 # Install packages
 sudo pacman -Syu
-sudo pacman -S -needed - < packages.txt
+sudo pacman -S --needed - < packages.txt
 
 # systemd
 sudo timedatectl set-ntp true
