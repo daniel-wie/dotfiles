@@ -21,6 +21,7 @@ chmod 700 ~/.ssh
 stow home --dir="$HOME/.dotfiles" --target="$HOME" home
 
 systemctl enable --user ssh-agent.service
+systemctl enable --user --now hypridle.service
 
 # Finalize
 printf '\033[1mCustom installation is done. Please reboot.\n'
