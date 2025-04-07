@@ -1,6 +1,7 @@
 base
 base-devel
 dolphin
+dunst
 efibootmgr
 fd
 fzf
@@ -10,6 +11,7 @@ hypridle
 hyprland
 hyprlock
 kitty
+libnotify
 linux
 linux-firmware
 man-db
