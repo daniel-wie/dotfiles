@@ -18,10 +18,12 @@ mkdir -p ~/.ssh
 chmod 700 ~/.ssh
 
 # Why does "~" instead of "$HOME" cause errors in stow command?
-stow home --dir="$HOME/.dotfiles" --target="$HOME" home
+stow home --dir=$HOME/.dotfiles --target=$HOME home
 
+# Enable systemd services
 systemctl enable --user ssh-agent.service
-systemctl enable --user --now hypridle.service
+systemctl enable --user hypridle.service
+systemctl enable --user waybar.service
 
 # Finalize
 printf '\033[1mCustom installation is done. Please reboot.\n'

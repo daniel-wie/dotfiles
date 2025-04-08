@@ -1,0 +1,110 @@
+@import "mocha.css";
+
+* {
+  /* `otf-font-awesome` is required to be installed for icons */
+  font-family: DejaVuSansM Nerd Font Mono;
+  font-size: 13px;
+}
+
+#waybar {
+  background: transparent;
+  color: @text;
+  margin: 5px 5px;
+}
+
+#workspaces {
+  border-radius: 1rem;
+  margin: 5px;
+  background-color: @surface0;
+  margin-left: 1rem;
+}
+
+#workspaces button {
+  color: @lavender;
+  border-radius: 1rem;
+  padding: 0.4rem;
+}
+
+#workspaces button.active {
+  color: @sky;
+  border-radius: 1rem;
+}
+
+#workspaces button.hover {
+  color: @sapphire;
+  border-radius: 1rem;
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#pulseaudio,
+#tray {
+  background-color: @surface0;
+  padding: 0.5rem 1rem;
+  margin: 5px 0px;
+}
+
+#clock {
+  color: @mauve;
+  border-radius: 1rem;
+}
+
+#pulseaudio {
+  color: @maroon;
+  border-radius: 1rem 0px 0px 1rem;
+  margin-left: 1rem;
+  margin-right: 0;
+}
+
+#cpu {
+  color: @peach;
+}
+
+#memory {
+  color: @yellow;
+}
+
+#cpu,
+#memory {
+  border-radius: 0;
+}
+
+#battery {
+  color: @green;
+  border-radius: 0px 1rem 1rem 0px;
+  margin-right: 1rem;
+}
+
+#battery.charging {
+  color: @green;
+}
+
+#battery.warning:not(.charging) {
+  color: @red;
+}
+
+@keyframes blink {
+  to {
+    color: @sky;
+  }
+}
+
+/* Using steps() instead of linear as a timing function to limit cpu usage */
+#battery.critical:not(.charging) {
+  color: @red;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: steps(12);
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+#tray > .passive {
+  -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+  -gtk-icon-effect: highlight;
+}

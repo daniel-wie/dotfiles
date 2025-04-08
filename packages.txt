@@ -21,8 +21,15 @@ man-db
 neovim
 networkmanager
 nodejs
+noto-fonts
+noto-fonts-emoji
+noto-fonts-extra
 npm
 openssh
+otf-font-awesome
+pavucontrol
+pipewire-pulse
+qt5-wayland
 rsync
 stow
 texlive-basic
@@ -31,7 +38,10 @@ thunderbird
 ttf-dejavu-nerd
 unzip
 uwsm
+waybar
 wget
 wl-clipboard
 wofi
+xdg-desktop-portal-hyprland
+xdg-user-dirs
 zathura
