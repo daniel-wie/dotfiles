@@ -7,6 +7,7 @@
 | OS                   | [Arch Linux](https://archlinux.org/)                    |
 | Shell                | [Bash](https://www.gnu.org/software/bash/)              |
 | Compositor           | [Hyprland](https://hyprland.org/)                       |
+| Display Manager      | [ReGreet](https://github.com/rharish101/ReGreet/)       |
 | Terminal Emulator    | [Kitty](https://sw.kovidgoyal.net/kitty/)               |
 | Text Editor          | [Neovim](https://neovim.io/)                            |
 | Font                 | [DejaVu](https://dejavu-fonts.github.io/)               |

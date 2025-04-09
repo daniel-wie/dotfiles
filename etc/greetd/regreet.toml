@@ -1,0 +1,36 @@
+[background]
+path = "/usr/share/backgrounds/greeter.jpg"
+
+# How the background image covers the screen if the aspect ratio doesn't match
+# Available values: "Fill", "Contain", "Cover", "ScaleDown"
+# Refer to: https://docs.gtk.org/gtk4/enum.ContentFit.html
+# NOTE: This is ignored if ReGreet isn't compiled with GTK v4.8 support.
+fit = "Contain"
+
+# The entries defined in this section will be passed to the session as environment variables when it is started
+# [env]
+# ENV_VARIABLE = "value"
+
+[GTK]
+application_prefer_dark_theme = true
+cursor_theme_name = "Adwaita"
+font_name = "DejaVuSansM Nerd Font 13"
+icon_theme_name = "Adwaita"
+theme_name = "Adwaita"
+
+[commands]
+reboot = ["systemctl", "reboot"]
+poweroff = ["systemctl", "poweroff"]
+
+# [appearance]
+# greeting_msg = "Welcome back!"
+
+[widget.clock]
+# strftime format argument
+# See https://docs.rs/jiff/0.1.14/jiff/fmt/strtime/index.html#conversion-specifications
+format = "%a %F %T"
+resolution = "500ms"
+
+# Ask GTK to make the label at least this wide. This helps keeps the parent element layout and width consistent.
+# Experiment with different widths, the interpretation of this value is entirely up to GTK.
+label_width = 150
