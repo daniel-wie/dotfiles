@@ -23,6 +23,7 @@ stow home --dir=$HOME/.dotfiles --target=$HOME home
 # Enable systemd services
 systemctl enable --user ssh-agent.service
 systemctl enable --user hypridle.service
+systemctl enable --user hyprpaper.service
 systemctl enable --user waybar.service
 
 # Finalize
