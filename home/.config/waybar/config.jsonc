@@ -19,9 +19,22 @@
   "clock": {
     "interval": 1,
     "format": "{:%a %F %T}",
-    "locale": "en_US.UTF-8",
+    "locale": "en_GB.UTF-8",
     "tooltip": true,
     "tooltip-format": "<tt>{calendar}</tt>",
+    "calendar": {
+      "weeks-pos": "right",
+      "mode-mon-col": 3,
+      "on-scroll": 1,
+      "format": {
+        "today": "<span color='#f38ba8'>{}</span>",
+      },
+    },
+    "actions": {
+      "on-click-right": "mode",
+      "on-scroll-up": "shift_down",
+      "on-scroll-down": "shift_up",
+    },
   },
   "cpu": {
     "format": " {usage}%",
@@ -34,7 +47,7 @@
     "states": {
       // "good": 95,
       "warning": 30,
-      "critical": 15,
+      "critical": 10,
     },
     "format": "{icon} {capacity}%",
     "format-charging": " {capacity}%",
