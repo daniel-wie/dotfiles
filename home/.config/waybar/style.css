@@ -9,14 +9,13 @@
 #waybar {
   background: transparent;
   color: @text;
-  margin: 5px 5px;
+  margin: 5px;
 }
 
 #workspaces {
   border-radius: 1rem;
   margin: 5px;
   background-color: @surface0;
-  margin-left: 1rem;
 }
 
 #workspaces button {
@@ -32,7 +31,6 @@
 
 #workspaces button.hover {
   color: @sapphire;
-  border-radius: 1rem;
 }
 
 #clock,
@@ -54,7 +52,7 @@
 #pulseaudio {
   color: @maroon;
   border-radius: 1rem 0px 0px 1rem;
-  margin-left: 1rem;
+  margin-left: 5px;
   margin-right: 0;
 }
 
@@ -74,7 +72,7 @@
 #battery {
   color: @green;
   border-radius: 0px 1rem 1rem 0px;
-  margin-right: 1rem;
+  margin-right: 5px;
 }
 
 #battery.charging {
