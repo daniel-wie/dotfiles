@@ -17,3 +17,4 @@
 | Browser              | [Firefox](https://www.mozilla.org/en-US/firefox/)       |
 | E-Mail               | [Thunderbird](https://www.thunderbird.net/en-US/)       |
 | PDF Viewer           | [Zathura](https://pwmt.org/projects/zathura/)           |
+| Status Bar           | [Waybar](https://github.com/Alexays/Waybar)             |
