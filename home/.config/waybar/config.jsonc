@@ -7,7 +7,7 @@
   // Choose the order of the modules
   "modules-left": ["hyprland/workspaces"],
   "modules-center": ["clock"],
-  "modules-right": ["pulseaudio", "cpu", "memory", "battery", "tray"],
+  "modules-right": ["cpu", "memory", "pulseaudio", "backlight", "battery", "tray"],
   // Modules configuration
   "hyprland/workspaces": {
     "all-outputs": true,
@@ -61,5 +61,9 @@
       "default": ["", "", ""],
     },
     "on-click": "pavucontrol",
+  },
+  "backlight": {
+    "format": "{icon} {percent}%",
+    "format-icons": ["󰃞", "󰃟", "󰃠"],
   },
 }

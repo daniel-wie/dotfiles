@@ -1,6 +1,7 @@
 base
 base-devel
 biber
+brightnessctl
 dolphin
 dunst
 efibootmgr
