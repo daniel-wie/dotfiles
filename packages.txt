@@ -8,10 +8,12 @@ fd
 firefox
 fzf
 git
+greetd-regreet
 htop
 hypridle
 hyprland
 hyprlock
+hyprpaper
 jdk21-openjdk
 kitty
 libnotify
@@ -42,6 +44,7 @@ waybar
 wget
 wl-clipboard
 wofi
+xdg-desktop-portal-gtk
 xdg-desktop-portal-hyprland
 xdg-user-dirs
 zathura

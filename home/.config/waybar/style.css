@@ -9,24 +9,24 @@
 #waybar {
   background: transparent;
   color: @text;
-  margin: 5px;
+  margin: 5px 5px 0;
 }
 
 #workspaces {
-  border-radius: 1rem;
-  margin: 5px;
+  border-radius: 8px;
+  margin: 5px 5px 0;
   background-color: @surface0;
 }
 
 #workspaces button {
   color: @lavender;
-  border-radius: 1rem;
-  padding: 0.4rem;
+  border-radius: 8px;
+  padding: 0.5rem;
 }
 
 #workspaces button.active {
   color: @sky;
-  border-radius: 1rem;
+  border-radius: 8px;
 }
 
 #workspaces button.hover {
@@ -41,17 +41,17 @@
 #tray {
   background-color: @surface0;
   padding: 0.5rem 1rem;
-  margin: 5px 0px;
+  margin: 5px 0 0;
 }
 
 #clock {
   color: @mauve;
-  border-radius: 1rem;
+  border-radius: 8px;
 }
 
 #pulseaudio {
   color: @maroon;
-  border-radius: 1rem 0px 0px 1rem;
+  border-radius: 8px 0 0 8px;
   margin-left: 5px;
   margin-right: 0;
 }
@@ -71,7 +71,7 @@
 
 #battery {
   color: @green;
-  border-radius: 0px 1rem 1rem 0px;
+  border-radius: 0 8px 8px 0;
   margin-right: 5px;
 }
 
