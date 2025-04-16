@@ -56,27 +56,20 @@ root_partition=$(lsblk -rno NAME /dev/$drive | grep $drive.*2)
 mkfs.fat -F 32 /dev/$efi_system_partition
 mkfs.btrfs /dev/$root_partition
 
-# 1.11 Mount the filesystems
+# 1.11 Mount the filesystems (flat hierarchy)
 mount /dev/$root_partition /mnt
-mount --mkdir /dev/$efi_system_partition /mnt/boot
-
 btrfs subvolume create /mnt/@
 btrfs subvolume create /mnt/@home
+(( swap_size > 0 )) && btrfs subvolume create /mnt/@swap
+umount /mnt
+mount -o compress=zstd,subvol=@ /dev/$root_partition /mnt
+mount --mkdir -o compress=zstd,subvol=@home /dev/$root_partition /mnt/home
+mount --mkdir /dev/$efi_system_partition /mnt/efi
 
 # Create swapfile
 # https://wiki.archlinux.org/title/Btrfs#Swap_file
 if (( swap_size > 0 )); then
-	btrfs subvolume create /mnt/@swap
-fi
-
-umount -R /mnt
-mount -o compress=zstd,subvol=@ /dev/$root_partition /mnt
-mkdir /mnt/home
-mount -o compress=zstd,subvol=@home /dev/$root_partition /mnt/home
-
-if (( swap_size > 0 )); then
-	mkdir /mnt/swap
-	mount -o subvol=@swap /dev/$root_partition /mnt/swap
+	mount --mkdir -o subvol=@swap /dev/$root_partition /mnt/swap
 	btrfs filesystem mkswapfile --size "${swap_size}g" --uuid clear /mnt/swap/swapfile
 	swapon /mnt/swap/swapfile
 fi
@@ -90,10 +83,7 @@ pacstrap -K /mnt base linux linux-firmware efibootmgr base-devel networkmanager 
 
 # 3.1 Generate fstab file
 genfstab -U /mnt >> /mnt/etc/fstab
-
-if (( swap_size > 0 )); then
-	echo "/swap/swapfile none swap defaults 0 0" > /mnt/etc/fstab
-fi
+(( swap_size > 0 )) && echo "/swap/swapfile none swap defaults 0 0" >> /mnt/etc/fstab
 
 # 3.2 Change root into the new system
 # Insert values into chroot.sh 
