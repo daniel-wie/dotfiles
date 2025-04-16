@@ -60,10 +60,23 @@ mkfs.btrfs /dev/$root_partition
 mount /dev/$root_partition /mnt
 mount --mkdir /dev/$efi_system_partition /mnt/boot
 
+btrfs subvolume create /mnt/@
+btrfs subvolume create /mnt/@home
+
 # Create swapfile
 # https://wiki.archlinux.org/title/Btrfs#Swap_file
 if (( swap_size > 0 )); then
-	btrfs subvolume create /mnt/swap
+	btrfs subvolume create /mnt/@swap
+fi
+
+umount /mnt
+mount -o compress=zstd,subvol=@ /dev/$root_partition /mnt
+mkdir /mnt/home
+mount -o compress=zstd,subvol=@home /dev/$root_partition /mnt/home
+
+if (( swap_size > 0 )); then
+	mkdir /mnt/swap
+	mount -o subvol=@swap /dev/$root_partition /mnt/swap
 	btrfs filesystem mkswapfile --size "${swap_size}g" --uuid clear /mnt/swap/swapfile
 	swapon /mnt/swap/swapfile
 fi
@@ -71,12 +84,16 @@ fi
 # 2 Installation
 
 # 2.2 Install essential packages
-pacstrap -K /mnt base linux linux-firmware efibootmgr networkmanager neovim
+pacstrap -K /mnt base linux linux-firmware efibootmgr base-devel networkmanager neovim
 
 # 3 Configure the system
 
 # 3.1 Generate fstab file
 genfstab -U /mnt >> /mnt/etc/fstab
+
+if (( swap_size > 0 )); then
+	echo "/swap/swapfile none swap defaults 0 0" > /mnt/etc/fstab
+fi
 
 # 3.2 Change root into the new system
 # Insert values into chroot.sh 
@@ -96,8 +113,7 @@ shred -u /mnt/root/chroot.sh
 
 # 4 Reboot
 
-# Turn off swap and unmount all partitions.
-(( swap_size > 0 )) && swapoff /mnt/swap/swapfile
+# Unmount all partitions.
 umount -R /mnt
 
 printf '\033[1mInstallation is done.\n'
