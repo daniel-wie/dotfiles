@@ -69,7 +69,7 @@ if (( swap_size > 0 )); then
 	btrfs subvolume create /mnt/@swap
 fi
 
-umount /mnt
+umount -R /mnt
 mount -o compress=zstd,subvol=@ /dev/$root_partition /mnt
 mkdir /mnt/home
 mount -o compress=zstd,subvol=@home /dev/$root_partition /mnt/home
@@ -113,7 +113,8 @@ shred -u /mnt/root/chroot.sh
 
 # 4 Reboot
 
-# Unmount all partitions.
+# Turn off swap and unmount all partitions.
+(( swap_size > 0 )) && swapoff /mnt/swap/swapfile
 umount -R /mnt
 
 printf '\033[1mInstallation is done.\n'
