@@ -24,6 +24,8 @@ printf 'KEYMAP=%s\n' $keymap > /etc/vconsole.conf
 
 # 3.5 Network configuration
 printf '%s\n' $hostname > /etc/hostname
+printf '127.0.0.1 localhost\n::1 localhost\n127.0.1.1 %s\n' $hostname > /etc/hosts
+
 systemctl enable NetworkManager.service
 
 # 3.7 Root password
@@ -52,11 +54,8 @@ esac
 
 pacman -S --noconfirm $microcode
 
-# https://wiki.archlinux.org/title/EFISTUB#efibootmgr
-efibootmgr \
-    --create \
-    --disk /dev/$drive \
-    --part 1 \
-    --label "Arch Linux" \
-    --loader /vmlinuz-linux \
-    --unicode "root=UUID=$uuid_root rw initrd=\initramfs-linux.img quiet"
+# https://wiki.archlinux.org/title/GRUB#Installation
+grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=GRUB
+
+# https://wiki.archlinux.org/title/GRUB#Generate_the_main_configuration_file
+grub-mkconfig -o /boot/grub/grub.cfg

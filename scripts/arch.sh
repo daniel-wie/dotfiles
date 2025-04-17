@@ -77,13 +77,12 @@ fi
 # 2 Installation
 
 # 2.2 Install essential packages
-pacstrap -K /mnt base linux linux-firmware efibootmgr base-devel networkmanager neovim
+pacstrap -K /mnt base linux linux-firmware efibootmgr grub base-devel networkmanager neovim
 
 # 3 Configure the system
 
 # 3.1 Generate fstab file
 genfstab -U /mnt >> /mnt/etc/fstab
-(( swap_size > 0 )) && echo "/swap/swapfile none swap defaults 0 0" >> /mnt/etc/fstab
 
 # 3.2 Change root into the new system
 # Insert values into chroot.sh 
