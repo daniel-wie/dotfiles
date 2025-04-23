@@ -26,6 +26,7 @@ printf 'KEYMAP=%s\n' $keymap > /etc/vconsole.conf
 printf '%s\n' $hostname > /etc/hostname
 printf '127.0.0.1 localhost\n::1 localhost\n127.0.1.1 %s\n' $hostname > /etc/hosts
 
+# Network manager
 systemctl enable NetworkManager.service
 
 # 3.7 Root password
@@ -60,5 +61,12 @@ grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=GRUB
 # https://wiki.archlinux.org/title/GRUB#Generate_the_main_configuration_file
 grub-mkconfig -o /boot/grub/grub.cfg
 
-# Enable display manager
+# Display manager
 systemctl enable greetd.service
+
+# grub-btrfs
+# https://github.com/Antynea/grub-btrfs
+systemctl enable grub-btrfs.service
+
+# Hourly backups
+systemctl enable backup.timer

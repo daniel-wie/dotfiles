@@ -39,7 +39,7 @@ g
 n
 
 
-+1024M
++512M
 t
 1
 n
@@ -60,11 +60,17 @@ mkfs.btrfs /dev/$root_partition
 mount /dev/$root_partition /mnt
 btrfs subvolume create /mnt/@
 btrfs subvolume create /mnt/@home
+btrfs subvolume create /mnt/@snapshots
 (( swap_size > 0 )) && btrfs subvolume create /mnt/@swap
 umount /mnt
 mount -o compress=zstd,subvol=@ /dev/$root_partition /mnt
 mount --mkdir -o compress=zstd,subvol=@home /dev/$root_partition /mnt/home
 mount --mkdir /dev/$efi_system_partition /mnt/efi
+
+# Create subvolume for snapshots and mount root filesystem
+mount --mkdir -o compress=zstd,subvol=@snapshots /dev/$root_partition /mnt/.snapshots
+mkdir -p /mnt/mnt/btr_pool
+mount /dev/$root_partition /mnt/mnt/btr_pool
 
 # Create swapfile
 # https://wiki.archlinux.org/title/Btrfs#Swap_file
