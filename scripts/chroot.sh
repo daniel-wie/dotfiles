@@ -59,3 +59,6 @@ grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=GRUB
 
 # https://wiki.archlinux.org/title/GRUB#Generate_the_main_configuration_file
 grub-mkconfig -o /boot/grub/grub.cfg
+
+# Enable display manager
+systemctl enable greetd.service
