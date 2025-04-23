@@ -2,6 +2,7 @@ base
 base-devel
 biber
 brightnessctl
+btrbk
 dolphin
 dunst
 efibootmgr
@@ -10,11 +11,14 @@ firefox
 fzf
 git
 greetd-regreet
+grub
+grub-btrfs
 htop
 hypridle
 hyprland
 hyprlock
 hyprpaper
+inotify-tools
 jdk21-openjdk
 kitty
 libnotify
