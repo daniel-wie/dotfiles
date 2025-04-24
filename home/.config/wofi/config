@@ -1,0 +1,8 @@
+width=80%
+height=60%
+always_parse_args=true
+hide_scroll=true
+print_command=true
+insensitive=true
+prompt=
+columns=2
