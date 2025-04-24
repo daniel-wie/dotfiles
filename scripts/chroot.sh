@@ -70,3 +70,6 @@ systemctl enable grub-btrfs.service
 
 # Hourly backups
 systemctl enable backup.timer
+
+# Clean pacman cache every week
+systemctl enable paccache.timer

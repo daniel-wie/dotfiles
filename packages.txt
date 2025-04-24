@@ -34,6 +34,7 @@ noto-fonts-extra
 npm
 openssh
 otf-font-awesome
+pacman-contrib
 pavucontrol
 pipewire-pulse
 qt5-wayland
