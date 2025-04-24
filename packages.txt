@@ -3,6 +3,8 @@ base-devel
 biber
 brightnessctl
 btrbk
+cups
+cups-pdf
 dolphin
 dunst
 efibootmgr
