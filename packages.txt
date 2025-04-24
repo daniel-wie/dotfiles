@@ -37,6 +37,7 @@ otf-font-awesome
 pacman-contrib
 pavucontrol
 pipewire-pulse
+pkgstats
 qt5-wayland
 rsync
 stow
