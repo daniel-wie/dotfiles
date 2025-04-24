@@ -28,6 +28,20 @@ Inspired by the [dotfiles](https://github.com/frankebel/dotfiles) and
 | Browser              | [Firefox](https://www.mozilla.org/en-US/firefox/)       |
 | E-Mail               | [Thunderbird](https://www.thunderbird.net/en-US/)       |
 
+## Installation
+
+1. Clone this repository
+2. `cd archinstall`
+3. Edit `install.sh` to set the desired configuration.
+4. Run `./install.sh`
+5. Reboot and log into the new system.
+6. Run `./setup.sh`
+7. Reboot and enjoy!
+
+Optional:
+
+- Generate new ssh-key for remote connectivity.
+
 ## To-Do
 
 - [x] Persistent clipboard
