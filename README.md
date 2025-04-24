@@ -20,6 +20,7 @@ Inspired by the [dotfiles](https://github.com/frankebel/dotfiles) and
 | Status Bar           | [Waybar](https://github.com/Alexays/Waybar)             |
 | Application Launcher | [Wofi](https://hg.sr.ht/~scoopta/wofi)                  |
 | Clipboard            | [wl-clipboard](https://github.com/bugaevc/wl-clipboard) |
+| Clipboard Manager    | [cliphist](https://github.com/sentriz/cliphist)         |
 | Shell                | [Bash](https://www.gnu.org/software/bash/)              |
 | Terminal Emulator    | [Kitty](https://sw.kovidgoyal.net/kitty/)               |
 | Text Editor          | [Neovim](https://neovim.io/)                            |
@@ -29,7 +30,7 @@ Inspired by the [dotfiles](https://github.com/frankebel/dotfiles) and
 
 ## To-Do
 
-- [ ] Persistent clipboard
+- [x] Persistent clipboard
 - [ ] Nvidia graphics driver
 - [ ] Set up shell prompt (change to zsh?)
 - [ ] Set up SSD trim

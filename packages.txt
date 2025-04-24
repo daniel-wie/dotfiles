@@ -3,6 +3,7 @@ base-devel
 biber
 brightnessctl
 btrbk
+cliphist
 cups
 cups-pdf
 dolphin
