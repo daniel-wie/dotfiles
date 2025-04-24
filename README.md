@@ -32,6 +32,8 @@ Inspired by the [dotfiles](https://github.com/frankebel/dotfiles) and
 
 - [x] Persistent clipboard
 - [ ] Nvidia graphics driver
+- [ ] Set up [Bluetooth](https://wiki.archlinux.org/title/Bluetooth)
+- [ ] Set up password manager
 - [ ] Set up shell prompt (change to zsh?)
 - [ ] Set up SSD trim
 - [ ] Set up AUR
