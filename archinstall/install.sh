@@ -32,7 +32,7 @@ drive_default=$(lsblk -dno NAME | grep -E '^nvme|^sd|^vd' | head -n 1)
 [ $(< /sys/firmware/efi/fw_platform_size) == 64 ] || exit 1
 
 # 1.9 Partition the disks
-# Create 1024MB partition for EFI system.
+# Create 512MB partition for EFI system.
 # Create root partition with remaining capacity.
 fdisk /dev/$drive << FDISK_CMDS
 g
@@ -61,16 +61,26 @@ mount /dev/$root_partition /mnt
 btrfs subvolume create /mnt/@
 btrfs subvolume create /mnt/@home
 btrfs subvolume create /mnt/@snapshots
+btrfs subvolume create /mnt/@var_log
+btrfs subvolume create /mnt/@var_cache
+btrfs subvolume create /mnt/@var_tmp
 (( swap_size > 0 )) && btrfs subvolume create /mnt/@swap
 umount /mnt
+
+# Mount subvolumes for root and home and efi partition
 mount -o compress=zstd,subvol=@ /dev/$root_partition /mnt
 mount --mkdir -o compress=zstd,subvol=@home /dev/$root_partition /mnt/home
 mount --mkdir /dev/$efi_system_partition /mnt/efi
 
-# Create subvolume for snapshots and mount root filesystem
+# Mount subvolumes to avoid bloating the snapshots with unnecessary data
+# https://wiki.archlinux.org/title/Snapper#Suggested_filesystem_layout
+mount -o --mkdir compress=zstd,subvol=@var_log /dev/$root_partition /mnt/var/log
+mount -o --mkdir compress=zstd,subvol=@var_cache /dev/$root_partition /mnt/var/cache
+mount -o --mkdir compress=zstd,subvol=@var_tmp /dev/$root_partition /mnt/var/tmp
+
+# Mount subvolumes for snapshots and root filesystem
 mount --mkdir -o compress=zstd,subvol=@snapshots /dev/$root_partition /mnt/.snapshots
-mkdir -p /mnt/mnt/btr_pool
-mount /dev/$root_partition /mnt/mnt/btr_pool
+mount --mkdir /dev/$root_partition /mnt/mnt/btr_pool
 
 # Create swapfile
 # https://wiki.archlinux.org/title/Btrfs#Swap_file
