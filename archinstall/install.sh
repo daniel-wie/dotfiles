@@ -3,6 +3,8 @@
 # https://github.com/frankebel/archinstall and
 # https://wiki.archlinux.org/title/Installation_guide.
 
+set -e # Exit on error
+
 # Uncomment lines below and set values manually.
 # drive=              # Drive to install Arch Linux. (default: first drive)
 # swap_size=          # Swap size in GiB. Set 0 for none. (default: 0)
@@ -74,9 +76,9 @@ mount --mkdir /dev/$efi_system_partition /mnt/efi
 
 # Mount subvolumes to avoid bloating the snapshots with unnecessary data
 # https://wiki.archlinux.org/title/Snapper#Suggested_filesystem_layout
-mount -o --mkdir compress=zstd,subvol=@var_log /dev/$root_partition /mnt/var/log
-mount -o --mkdir compress=zstd,subvol=@var_cache /dev/$root_partition /mnt/var/cache
-mount -o --mkdir compress=zstd,subvol=@var_tmp /dev/$root_partition /mnt/var/tmp
+mount --mkdir -o compress=zstd,subvol=@var_log /dev/$root_partition /mnt/var/log
+mount --mkdir -o compress=zstd,subvol=@var_cache /dev/$root_partition /mnt/var/cache
+mount --mkdir -o compress=zstd,subvol=@var_tmp /dev/$root_partition /mnt/var/tmp
 
 # Mount subvolumes for snapshots and root filesystem
 mount --mkdir -o compress=zstd,subvol=@snapshots /dev/$root_partition /mnt/.snapshots

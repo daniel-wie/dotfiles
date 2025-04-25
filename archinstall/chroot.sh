@@ -60,16 +60,3 @@ grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=GRUB
 
 # https://wiki.archlinux.org/title/GRUB#Generate_the_main_configuration_file
 grub-mkconfig -o /boot/grub/grub.cfg
-
-# Display manager
-systemctl enable greetd.service
-
-# grub-btrfs
-# https://github.com/Antynea/grub-btrfs
-systemctl enable grub-btrfs.service
-
-# Hourly backups
-systemctl enable backup.timer
-
-# Clean pacman cache every week
-systemctl enable paccache.timer

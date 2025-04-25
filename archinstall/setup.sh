@@ -7,8 +7,12 @@ sudo cp -r etc /
 sudo pacman -Syu
 sudo pacman -S --needed - < packages.txt
 
-# systemd
+# Enable systemwide systemd services
 sudo timedatectl set-ntp true
+sudo systemctl enable greetd.service # Display manager
+sudo systemctl enable grub-btrfsd.service # grub-btrfs, cf. https://github.com/Antynea/grub-btrfs
+sudo systemctl enable backup.timer # Hourly backups
+sudo systemctl enable paccache.timer # Clean pacman cache every week
 
 # Create directories
 mkdir -p ~/.config
@@ -23,7 +27,7 @@ chmod 700 ~/.ssh
 # Why does "~" instead of "$HOME" cause errors in stow command?
 stow home --dir=$HOME/.dotfiles --target=$HOME home
 
-# Enable systemd services
+# Enable user-specific systemd services
 systemctl enable --user ssh-agent.service
 systemctl enable --user hypridle.service
 systemctl enable --user hyprpaper.service
