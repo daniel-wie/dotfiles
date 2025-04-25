@@ -29,12 +29,14 @@ linux
 linux-firmware
 man-db
 neovim
+network-manager-applet
 networkmanager
 nodejs
 noto-fonts
 noto-fonts-emoji
 noto-fonts-extra
 npm
+nvtop
 openssh
 otf-font-awesome
 pacman-contrib

@@ -7,27 +7,29 @@ Inspired by the [dotfiles](https://github.com/frankebel/dotfiles) and
 
 ## Software
 
-| Type                 | Name                                                    |
-| :------------------- | :------------------------------------------------------ |
-| OS                   | [Arch Linux](https://archlinux.org/)                    |
-| Filesystem           | [BTRFS](https://btrfs.readthedocs.io/en/latest/#)       |
-| Bootloader           | [Grub](https://www.gnu.org/software/grub/)              |
-| Backups              | [btrbk](https://github.com/digint/btrbk)                |
-| Display Manager      | [ReGreet](https://github.com/rharish101/ReGreet/)       |
-| Compositor           | [Hyprland](https://hyprland.org/)                       |
-| Font                 | [DejaVu](https://dejavu-fonts.github.io/)               |
-| Notification Daemon  | [Dunst](https://dunst-project.org/)                     |
-| Status Bar           | [Waybar](https://github.com/Alexays/Waybar)             |
-| Application Launcher | [Wofi](https://hg.sr.ht/~scoopta/wofi)                  |
-| Clipboard            | [wl-clipboard](https://github.com/bugaevc/wl-clipboard) |
-| Clipboard Manager    | [cliphist](https://github.com/sentriz/cliphist)         |
-| Shell                | [Bash](https://www.gnu.org/software/bash/)              |
-| Terminal Emulator    | [Kitty](https://sw.kovidgoyal.net/kitty/)               |
-| Shell Prompt         | [Starship](https://starship.rs)                         |
-| Text Editor          | [Neovim](https://neovim.io/)                            |
-| PDF Viewer           | [Zathura](https://pwmt.org/projects/zathura/)           |
-| Browser              | [Firefox](https://www.mozilla.org/en-US/firefox/)       |
-| E-Mail               | [Thunderbird](https://www.thunderbird.net/en-US/)       |
+| Type                  | Name                                                                            |
+| :-------------------- | :------------------------------------------------------------------------------ |
+| OS                    | [Arch Linux](https://archlinux.org/)                                            |
+| Filesystem            | [BTRFS](https://btrfs.readthedocs.io/en/latest/#)                               |
+| Bootloader            | [Grub](https://www.gnu.org/software/grub/)                                      |
+| Backups               | [btrbk](https://github.com/digint/btrbk)                                        |
+| Display Manager       | [ReGreet](https://github.com/rharish101/ReGreet/)                               |
+| Compositor            | [Hyprland](https://hyprland.org/)                                               |
+| Font                  | [DejaVu](https://dejavu-fonts.github.io/)                                       |
+| Notification Daemon   | [Dunst](https://dunst-project.org/)                                             |
+| Status Bar            | [Waybar](https://github.com/Alexays/Waybar)                                     |
+| Application Launcher  | [Wofi](https://hg.sr.ht/~scoopta/wofi)                                          |
+| Clipboard             | [wl-clipboard](https://github.com/bugaevc/wl-clipboard)                         |
+| Clipboard Manager     | [cliphist](https://github.com/sentriz/cliphist)                                 |
+| Shell                 | [Bash](https://www.gnu.org/software/bash/)                                      |
+| Terminal Emulator     | [Kitty](https://sw.kovidgoyal.net/kitty/)                                       |
+| Shell Prompt          | [Starship](https://starship.rs)                                                 |
+| Text Editor           | [Neovim](https://neovim.io/)                                                    |
+| Network Control GUI   | [Network-Manager-Applet](https://gitlab.gnome.org/GNOME/network-manager-applet) |
+| Bluetooth Control GUI | [Blueman](https://github.com/blueman-project/blueman)                           |
+| PDF Viewer            | [Zathura](https://pwmt.org/projects/zathura/)                                   |
+| Browser               | [Firefox](https://www.mozilla.org/en-US/firefox/)                               |
+| E-Mail                | [Thunderbird](https://www.thunderbird.net/en-US/)                               |
 
 ## Installation
 
