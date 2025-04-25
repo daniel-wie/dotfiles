@@ -29,4 +29,6 @@ export VISUAL="nvim"
 export EDITOR=$VISUAL
 export READER="zathura"
 
+export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship/config.toml"
+
 [[ -f ~/.bashrc ]] && . ~/.bashrc

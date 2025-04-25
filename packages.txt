@@ -43,6 +43,7 @@ pipewire-pulse
 pkgstats
 qt5-wayland
 rsync
+starship
 stow
 texlive-basic
 texlive-binextra

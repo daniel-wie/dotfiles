@@ -23,6 +23,7 @@ Inspired by the [dotfiles](https://github.com/frankebel/dotfiles) and
 | Clipboard Manager    | [cliphist](https://github.com/sentriz/cliphist)         |
 | Shell                | [Bash](https://www.gnu.org/software/bash/)              |
 | Terminal Emulator    | [Kitty](https://sw.kovidgoyal.net/kitty/)               |
+| Shell Prompt         | [Starship](https://starship.rs)                         |
 | Text Editor          | [Neovim](https://neovim.io/)                            |
 | PDF Viewer           | [Zathura](https://pwmt.org/projects/zathura/)           |
 | Browser              | [Firefox](https://www.mozilla.org/en-US/firefox/)       |
@@ -48,7 +49,9 @@ Optional:
 - [ ] Nvidia graphics driver
 - [ ] Set up [Bluetooth](https://wiki.archlinux.org/title/Bluetooth)
 - [ ] Set up password manager
-- [ ] Set up shell prompt (change to zsh?)
+- [x] Set up shell prompt
+- [ ] Style shell prompt
+- [ ] Change to zsh?
 - [ ] Set up SSD trim
 - [ ] Set up AUR
 - [ ] Fix rendering of italics
