@@ -1,0 +1,4 @@
+blueman
+bluez
+bluez-utils
+nvidia

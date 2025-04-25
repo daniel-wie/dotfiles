@@ -46,8 +46,8 @@ Optional:
 ## To-Do
 
 - [x] Persistent clipboard
-- [ ] Nvidia graphics driver
-- [ ] Set up [Bluetooth](https://wiki.archlinux.org/title/Bluetooth)
+- [x] Nvidia graphics driver
+- [x] Set up [Bluetooth](https://wiki.archlinux.org/title/Bluetooth)
 - [ ] Set up password manager
 - [x] Set up shell prompt
 - [ ] Style shell prompt

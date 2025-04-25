@@ -13,6 +13,7 @@ sudo systemctl enable greetd.service # Display manager
 sudo systemctl enable grub-btrfsd.service # grub-btrfs, cf. https://github.com/Antynea/grub-btrfs
 sudo systemctl enable backup.timer # Hourly backups
 sudo systemctl enable paccache.timer # Clean pacman cache every week
+sudo systemctl enable bluetooth.service
 
 # Create directories
 mkdir -p ~/.config
