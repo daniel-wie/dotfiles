@@ -7,7 +7,7 @@
   // Choose the order of the modules
   "modules-left": ["hyprland/workspaces"],
   "modules-center": ["clock"],
-  "modules-right": ["cpu", "memory", "pulseaudio", "backlight", "battery", "tray"],
+  "modules-right": ["tray", "cpu", "memory", "pulseaudio", "backlight", "battery"],
   // Modules configuration
   "hyprland/workspaces": {
     "all-outputs": true,
