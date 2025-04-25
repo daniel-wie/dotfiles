@@ -52,7 +52,7 @@ Optional:
 - [x] Set up [Bluetooth](https://wiki.archlinux.org/title/Bluetooth)
 - [ ] Set up password manager
 - [x] Set up shell prompt
-- [ ] Style shell prompt
+- [x] Style shell prompt
 - [ ] Change to zsh?
 - [ ] Set up SSD trim
 - [ ] Set up AUR
