@@ -44,6 +44,8 @@ Inspired by the [dotfiles](https://github.com/frankebel/dotfiles) and
 Optional:
 
 - Generate new ssh-key for remote connectivity.
+- Additional device-specific packages can be specified in the directory
+  `packages/$HOSTNAME`.
 
 ## To-Do
 
@@ -55,7 +57,9 @@ Optional:
 - [x] Style shell prompt
 - [ ] Change to zsh?
 - [ ] Set up SSD trim
-- [ ] Set up AUR
+- [x] Set up AUR
 - [ ] Fix rendering of italics
 - [ ] Style display manger
 - [ ] Set up firewall?
+- [ ] nvim: replace markdown-preview
+- [x] Install julia.

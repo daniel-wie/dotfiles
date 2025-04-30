@@ -25,6 +25,7 @@ inotify-tools
 jdk21-openjdk
 kitty
 libnotify
+libreoffice-still
 linux
 linux-firmware
 man-db

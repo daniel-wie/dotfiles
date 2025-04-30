@@ -3,9 +3,22 @@
 # Global config
 sudo cp -r etc /
 
-# Install packages
+# Install official packages
 sudo pacman -Syu
-sudo pacman -S --needed - < packages.txt
+[ -f packages/pacman.txt ] && sudo pacman -S --needed - < packages/pacman.txt
+[ -f "packages/$HOSTNAME/pacman.txt" ] && sudo pacman -S --needed - < "packages/$HOSTNAME/pacman.txt"
+
+# Install paru for AUR
+# https://github.com/Morganamilo/paru
+git clone https://aur.archlinux.org/paru.git
+cd paru || exit
+makepkg -si
+cd .. || exit
+rm -rf paru
+
+# Install AUR packages
+[ -f packages/aur.txt ] && paru -S --needed - < packages/aur.txt
+[ -f "packages/$HOSTNAME/aur.txt" ] && paru -S --needed - < "packages/$HOSTNAME/aur.txt"
 
 # Enable systemwide systemd services
 sudo timedatectl set-ntp true
@@ -26,7 +39,7 @@ mkdir -p ~/.ssh
 chmod 700 ~/.ssh
 
 # Why does "~" instead of "$HOME" cause errors in stow command?
-stow home --dir=$HOME/.dotfiles --target=$HOME home
+stow home --dir="$HOME/.dotfiles" --target="$HOME" home
 
 # Enable user-specific systemd services
 systemctl enable --user ssh-agent.service
