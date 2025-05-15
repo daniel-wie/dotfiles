@@ -7,7 +7,7 @@
       "startingDirectory": "%USERPROFILE%",
       "elevate": false,
       "colorScheme": "Catppuccin Mocha",
-      "fontSize": 12,
+      "fontSize": 11,
       "fontFace": "DejaVuSansM Nerd Font",
       "cursorShape": "filledBox",
       "padding": "0, 4, -2, 4",
