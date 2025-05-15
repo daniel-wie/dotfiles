@@ -4,9 +4,10 @@ return {
 		opts = {
 			-- Ensure installation of packages not available in mason-lspconfig.
 			ensure_installed = {
-				"prettierd",
-				"stylua",
-				"latexindent",
+				"prettierd", -- Markdown formatting
+				"stylua", -- Lua formatting
+				"latexindent", -- TeX formatting
+				"black", -- Python formatting
 			},
 		},
 		config = function(_, opts)
@@ -28,9 +29,10 @@ return {
 		config = function()
 			require("mason-lspconfig").setup({
 				ensure_installed = {
-					"lua_ls",
+					"lua_ls", -- Lua LSP
 					"texlab",
 					"ltex",
+					"pyright", -- Python LSP
 				},
 			})
 		end,
@@ -111,6 +113,9 @@ return {
 
 			-- Julia
 			lspconfig.julials.setup({ capabilities = capabilities })
+
+			-- Python
+			lspconfig.pyright.setup({})
 
 			-- TexLab (completion etc.)
 			lspconfig.texlab.setup({ capabilities = capabilities })
