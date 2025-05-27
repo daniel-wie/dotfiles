@@ -6,9 +6,9 @@ return {
 	opts = {},
 	lazy = false,
 	config = function()
-		local oil = require("oil")
+		vim.keymap.set("n", "<leader>ex", "<CMD>Oil<CR>", { desc = "Oil: Open parent directory" })
 
-		oil.setup({
+		require("oil").setup({
 			columns = {
 				"icon",
 				"permissions",
