@@ -1,1 +1,1 @@
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+vim.keymap.set("n", "<leader>ex", "<CMD>Oil<CR>", { desc = "Oil: Open parent directory" })
