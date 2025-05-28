@@ -19,14 +19,22 @@ return {
 				"python",
 				"markdown",
 				"markdown_inline",
+				"gitcommit",
+				"gitignore",
+				"powershell",
+				"toml",
+				"yaml",
+				"bash",
+				"latex", -- For render-markdown.nvim
+				"html",
 			},
 			sync_install = false,
 			auto_install = true,
-			ignore_install = {
-				"latex", -- use vimtex as source instead
-			},
 			highlight = {
 				enable = true,
+				disable = {
+					"latex",
+				},
 			},
 			incremental_selection = {
 				enable = true,

@@ -6,7 +6,7 @@ return {
 	opts = {},
 	lazy = false,
 	config = function()
-		vim.keymap.set("n", "<leader>ex", "<CMD>Oil<CR>", { desc = "Oil: Open parent directory" })
+		vim.keymap.set("n", "<leader>ex", "<CMD>Oil<CR>", { desc = "Oil Open parent directory" })
 
 		require("oil").setup({
 			columns = {
