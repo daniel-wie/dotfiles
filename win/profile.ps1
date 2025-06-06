@@ -7,4 +7,7 @@ Set-PSReadLineOption -PredictionSource History
 Set-PSReadLineOption -PredictionViewStyle ListView
 Set-PSReadLineOption -EditMode Windows
 
+$env:CONFIG_HOME = "$env:USERPROFILE\.config"
+$env:KOMOREBI_CONFIG_HOME = "$env:CONFIG_HOME\komorebi"
+
 Invoke-Expression (&starship init powershell)
