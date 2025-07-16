@@ -25,11 +25,11 @@ return {
 		cmd = "Telescope",
 		keys = {
 			{ "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "TELESCOPE Find Files" },
-			{ "<leader>fg", "<cmd>Telescope live_grep<cr>", desc = "TELESCOPE Live Grep" },
-			{ "<leader>fb", "<cmd>Telescope buffers<cr>", desc = "TELESCOPE List Buffers" },
-			{ "<leader>fh", "<cmd>Telescope help_tags<cr>", desc = "TELESCOPE Find Help" },
-			{ "<leader>fk", "<cmd>Telescope keymaps<cr>", desc = "TELESCOPE Find Keymaps" },
-			{ "<leader>fo", "<cmd>Telescope oldfiles<cr>", desc = "TELESCOPE Find Old Files" },
+			{ "<leader>fg", "<cmd>Telescope live_grep<cr>",  desc = "TELESCOPE Live Grep" },
+			{ "<leader>fb", "<cmd>Telescope buffers<cr>",    desc = "TELESCOPE List Buffers" },
+			{ "<leader>fh", "<cmd>Telescope help_tags<cr>",  desc = "TELESCOPE Find Help" },
+			{ "<leader>fk", "<cmd>Telescope keymaps<cr>",    desc = "TELESCOPE Find Keymaps" },
+			{ "<leader>fo", "<cmd>Telescope oldfiles<cr>",   desc = "TELESCOPE Find Old Files" },
 		},
 		opts = {
 			defaults = {

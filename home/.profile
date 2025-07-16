@@ -15,9 +15,9 @@ export MANPAGER='nvim +Man!'
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
 # texlive
-export PATH="$PATH:$HOME/.local/share/texlive/2024/bin/x86_64-linux"
-export MANPATH="$MANPATH:$HOME/.local/share/texlive/2024/texmf-dist/doc/man"
-export INFOPATH="$INFOPATH:$HOME/.local/share/texlive/2024/texmf-dist/doc/info"
+export PATH="$PATH:/usr/local/texlive/2025/bin/x86_64-linux"
+export MANPATH="$MANPATH:/usr/local/texlive/2025/texmf-dist/doc/man"
+export INFOPATH="$INFOPATH:/usr/local/texlive/2025/texmf-dist/doc/info"
 
 # julia
 export PATH="$HOME/.juliaup/bin:$PATH"
