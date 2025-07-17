@@ -32,12 +32,17 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # Manually activate ssh-agent for Ubuntu
+# https://wiki.archlinux.org/title/SSH_keys#ssh-agent
 if ! pgrep -u "$USER" ssh-agent > /dev/null; then
     ssh-agent -t 12h > "$XDG_RUNTIME_DIR/ssh-agent.env"
 fi
 if [ ! -f "$SSH_AUTH_SOCK" ]; then
     source "$XDG_RUNTIME_DIR/ssh-agent.env" >/dev/null
 fi
+
+# https://github.com/nvm-sh/nvm?tab=readme-ov-file#install--update-script
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" --no-use  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
