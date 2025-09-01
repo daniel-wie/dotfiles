@@ -1,5 +1,8 @@
 vim.opt_local.colorcolumn = { "90" }
 
+-- Disable Treesitter highlighting as suggested by Vimtex.
+vim.treesitter.stop()
+
 -- Completion
 local cmp = require("cmp")
 local sources = cmp.get_config().sources
