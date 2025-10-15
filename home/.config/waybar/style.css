@@ -26,7 +26,7 @@
   padding: 0.5rem;
 }
 
-#workspaces button.active {
+#workspaces button.focused {
   border-color: @sapphire;
 }
 
