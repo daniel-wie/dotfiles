@@ -15,3 +15,7 @@ vim.opt.wrap = false -- Line wrap
 vim.opt.termguicolors = true -- True color terminal
 vim.opt.undofile = true -- Save undo history
 vim.opt.clipboard = vim.env.SSH_TTY and "" or "unnamedplus" -- Use `clipboard-osc52` or system clipboard
+vim.opt.spelllang = { "en", "de" } -- Spellcheck for these languages
+vim.opt.spelloptions = { "camel" } -- camel case treated as separate word
+vim.opt.winborder = "rounded" -- Style of floating windows
+vim.opt.shortmess:append({ I = true }) -- Don't give intro message when starting Vim
