@@ -9,7 +9,7 @@ export XDG_STATE_HOME="$HOME/.local/state"
 export XDG_CACHE_HOME="$HOME/.cache"
         
 # Use neovim as manpager
-export MANPAGER='nvim --clean +Man!'
+# export MANPAGER='nvim --clean +Man!'
 
 # ssh-agent setup with systemd user unit
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
