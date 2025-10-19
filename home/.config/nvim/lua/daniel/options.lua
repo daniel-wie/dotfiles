@@ -19,3 +19,4 @@ vim.opt.spelllang = { "en", "de" } -- Spellcheck for these languages
 vim.opt.spelloptions = { "camel" } -- camel case treated as separate word
 vim.opt.winborder = "rounded" -- Style of floating windows
 vim.opt.shortmess:append({ I = true }) -- Don't give intro message when starting Vim
+vim.opt.signcolumn = "yes" -- Always show signcolumn
