@@ -6,8 +6,9 @@ return {
 			ensure_installed = {
 				"prettierd", -- Markdown formatting
 				"stylua", -- Lua formatting
-				"latexindent", -- TeX formatting
+				"tex-fmt", -- TeX formatting
 				"black", -- Python formatting
+				"shfmt", -- Shell formatting
 			},
 		},
 		config = function(_, opts)
@@ -76,20 +77,9 @@ return {
 			vim.lsp.enable({ "ltex_plus", "texlab" })
 
 			vim.api.nvim_create_autocmd("LspAttach", {
-				group = vim.api.nvim_create_augroup("UserLspConfig", { clear = true }),
-
-				callback = function(ev)
+				callback = function()
 					-- Enable completion triggered by <c-x><c-o>
-					vim.bo[ev.buf].omnifunc = "v:lua.vim.lsp.omnifunc"
-
-					-- format on save
-					vim.api.nvim_create_autocmd("BufWritePre", {
-						group = "UserLspConfig",
-						buffer = ev.buf,
-						callback = function()
-							vim.lsp.buf.format()
-						end,
-					})
+					vim.opt_local.omnifunc = "v:lua.vim.lsp.omnifunc"
 				end,
 			})
 		end,
