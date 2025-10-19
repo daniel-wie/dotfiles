@@ -8,13 +8,21 @@ set $right l
 
 set $term uwsm app -- kitty
 set $menu uwsm app -- $(wofi --show drun --define=drun-print_desktop_file=true)
+set $clipboard uwsm app -- $(cliphist list | wofi --show dmenu | cliphist decode | wl-copy)
 
 include /etc/sway/config-vars.d/*
+
+### Autostart
+exec uwsm app -- wl-paste --watch cliphist store
 
 ### Styling
 font pango:DejaVuSansM Nerd Font Mono 12
 
+include colors/catppuccin_mocha
+
 gaps inner 5
+default_border pixel 5
+default_floating_border normal
 
 ### Input configuration
 input "type:keyboard" {
@@ -27,7 +35,10 @@ output * bg $HOME/.dotfiles/img/bg.jpg fill
 
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 set $laptop eDP-1
+set $msi "Microstep MSI MD342CQP PC5H275200620"
+
 output $laptop resolution 1920x1080 position 0,0
+output $msi mode 3440x1440@120Hz position -3440,0
 output DP-3 resolution 1920x1080 position 1920,0
 output DP-4 resolution 1920x1080 position 3840,0
 
@@ -49,18 +60,12 @@ bindswitch --reload --locked lid:off output $laptop enable
 # resumed. It will also lock your screen before your computer goes to sleep.
 
 ### Input configuration
-#
-# Example configuration:
-#
-#   input "2:14:SynPS/2_Synaptics_TouchPad" {
-#       dwt enabled
-#       tap enabled
-#       natural_scroll enabled
-#       middle_emulation enabled
-#   }
-#
-# You can get the names of your inputs by running: swaymsg -t get_inputs
-# Read `man 5 sway-input` for more information about this section.
+input "type:touchpad" {
+      dwt enabled
+      tap enabled
+      natural_scroll enabled
+      middle_emulation enabled
+  }
 
 ### Key bindings
 #
@@ -75,6 +80,9 @@ bindswitch --reload --locked lid:off output $laptop enable
     # Start your launcher
     bindsym $mod+r exec $menu
 
+    # Start your clipboard
+    bindsym $mod+v exec $clipboard
+
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
     # Despite the name, also works for non-floating windows.
@@ -87,6 +95,15 @@ bindswitch --reload --locked lid:off output $laptop enable
 
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+
+	# Brightness control
+	bindsym XF86MonBrightnessUp exec brightnessctl s 5%+
+	bindsym XF86MonBrightnessDown exec brightnessctl s 5%-
+
+	# Volume control
+	bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+	bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +2%
+	bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -2%
 
 # Moving around:
     # Move your focus around
@@ -115,23 +132,20 @@ bindswitch --reload --locked lid:off output $laptop enable
     bindsym $mod+9 workspace number 9
     bindsym $mod+0 workspace number 10
     # Move focused container to workspace
-    bindsym $mod+Shift+1 move container to workspace number 1
-    bindsym $mod+Shift+2 move container to workspace number 2
-    bindsym $mod+Shift+3 move container to workspace number 3
-    bindsym $mod+Shift+4 move container to workspace number 4
-    bindsym $mod+Shift+5 move container to workspace number 5
-    bindsym $mod+Shift+6 move container to workspace number 6
-    bindsym $mod+Shift+7 move container to workspace number 7
-    bindsym $mod+Shift+8 move container to workspace number 8
-    bindsym $mod+Shift+9 move container to workspace number 9
-    bindsym $mod+Shift+0 move container to workspace number 10
+    bindsym $mod+Shift+1 move container to workspace number 1, workspace number 1
+    bindsym $mod+Shift+2 move container to workspace number 2, workspace number 2
+    bindsym $mod+Shift+3 move container to workspace number 3, workspace number 3
+    bindsym $mod+Shift+4 move container to workspace number 4, workspace number 4
+    bindsym $mod+Shift+5 move container to workspace number 5, workspace number 5
+    bindsym $mod+Shift+6 move container to workspace number 6, workspace number 6
+    bindsym $mod+Shift+7 move container to workspace number 7, workspace number 7
+    bindsym $mod+Shift+8 move container to workspace number 8, workspace number 8
+    bindsym $mod+Shift+9 move container to workspace number 9, workspace number 9
+    bindsym $mod+Shift+0 move container to workspace number 10, workspace number 10
 
 # Layout stuff:
-    # You can "split" the current object of your focus with
-    # $mod+b or $mod+v, for horizontal and vertical splits
-    # respectively.
-    bindsym $mod+b splith
-    bindsym $mod+v splitv
+	# Toggle splitting behavior
+    bindsym $mod+b splitt
 
     # Switch the current container between different layout styles
     # bindsym $mod+s layout stacking
@@ -173,9 +187,6 @@ mode "resize" {
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
-
-# Status Bar:
-bar swaybar_command waybar
 
 include /etc/sway/config.d/*
 
