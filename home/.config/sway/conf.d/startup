@@ -1,0 +1,2 @@
+# Start clipboard manager
+exec uwsm app -- wl-paste --watch cliphist store

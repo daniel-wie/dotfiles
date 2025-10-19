@@ -1,0 +1,5 @@
+include /etc/sway/config.d/*
+
+# Ensure variables are set in activation environments,
+# cf. https://deepwiki.com/Vladimir-csp/uwsm/3.1-installation#service-startup-notification
+exec exec uwsm finalize SWAYSOCK I3SOCK XCURSOR_SIZE XCURSOR_THEME
