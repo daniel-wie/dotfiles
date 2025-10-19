@@ -56,47 +56,31 @@
 
 * {
   font-family: DejaVuSansM Nerd Font Mono;
-  font-size: 14px;
+  font-size: 16px;
 }
 
-/* Window */
-window {
-  margin: 0px;
-  padding: 10px;
-  border: 0.16em solid @lavender;
-  background-color: @base;
-}
-
-/* Inner Box */
-#inner-box {
+#text {
   margin: 5px;
-  padding: 10px;
-  border: none;
-  background-color: @base;
+  color: @text;
 }
 
-/* Outer Box */
+#window {
+  margin: 0;
+  padding: 0;
+  border: 5px solid @lavender;
+  background-color: @base;
+  border-radius: 8px;
+}
+
 #outer-box {
-  margin: 5px;
+  margin: 10px;
   padding: 10px;
-  border: none;
   background-color: @base;
 }
 
-/* Scroll */
-#scroll {
-  margin: 0px;
-  padding: 10px;
-  border: none;
-  background-color: @base;
-}
-
-/* Input */
 #input {
-  margin: 5px 20px;
   padding: 10px;
   border: none;
-  border-radius: 0.1em;
   color: @text;
   background-color: @base;
 }
@@ -106,29 +90,27 @@ window {
   color: @red;
 }
 
-#input * {
-  outline: 4px solid @red!important;
+#scroll {
+  padding: 10px;
+  background-color: @base;
 }
 
-/* Text */
-#text {
-  margin: 5px;
-  border: none;
-  color: @text;
+#inner-box {
+  background-color: @base;
 }
 
 #entry {
+  border: 0.11em solid @base;
   background-color: @base;
 }
 
 #entry arrow {
-  border: none;
   color: @lavender;
 }
 
-/* Selected Entry */
 #entry:selected {
   border: 0.11em solid @lavender;
+  border-radius: 8px;
 }
 
 #entry:selected #text {
