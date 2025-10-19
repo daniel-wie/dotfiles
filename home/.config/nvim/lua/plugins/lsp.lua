@@ -29,28 +29,32 @@ return {
 		config = function()
 			require("mason-lspconfig").setup({
 				ensure_installed = {
-					"lua_ls", -- Lua LSP
+					"lua_ls",
 					"texlab",
-					"ltex",
-					"pyright", -- Python LSP
+					"ltex_plus",
+					"pyright",
 				},
 			})
 		end,
 	},
 	{
 		"neovim/nvim-lspconfig",
-		dependencies = { "barreiroleo/ltex_extra.nvim" },
+		dependencies = {
+			"saghen/blink.cmp",
+			"barreiroleo/ltex_extra.nvim",
+		},
 
 		config = function()
-			local lspconfig = require("lspconfig")
-
-			-- Add LSP-powered completion
-			local capabilities = require("blink.cmp").get_lsp_capabilities()
-
 			vim.api.nvim_create_autocmd("LspAttach", {
 				group = vim.api.nvim_create_augroup("UserLspConfig", { clear = true }),
 
 				callback = function(ev)
+					-- setup ltex_extra
+					-- require("ltex_extra").setup({
+					-- 	load_langs = { "en-US", "de-AT" },
+					-- 	path = ".ltex",
+					-- })
+
 					-- Enable completion triggered by <c-x><c-o>
 					vim.bo[ev.buf].omnifunc = "v:lua.vim.lsp.omnifunc"
 
@@ -102,55 +106,34 @@ return {
 			nmap("<leader>dl", vim.diagnostic.setloclist, "Diagnostic List")
 
 			-- Lua
-			lspconfig.lua_ls.setup({
+			vim.lsp.config("lua_ls", {
 				settings = {
 					Lua = {
-						diagnostics = {
-							globals = { "vim" },
-						},
+						diagnostics = { globals = { "vim" } },
 					},
 				},
-				capabilities = capabilities,
 			})
+			vim.lsp.enable("lua_ls")
 
 			-- Julia
-			lspconfig.julials.setup({ capabilities = capabilities })
+			vim.lsp.enable("julials")
 
 			-- Python
-			lspconfig.pyright.setup({})
+			vim.lsp.enable("pyright")
 
-			-- TexLab (completion etc.)
-			lspconfig.texlab.setup({ capabilities = capabilities })
-
-			-- add custom dictionary for exceptions
-			local function words()
-				local result = {}
-				local path = vim.fn.stdpath("config") .. "/spell/en.utf-8.add"
-				for word in io.open(path, "r"):lines() do
-					table.insert(result, word)
-				end
-				return result
-			end
-
-			-- LTeX (spelling & grammar)
-			lspconfig.ltex.setup({
-				on_attach = function(client, bufnr)
+			-- LaTeX
+			vim.lsp.config("ltex_plus", {
+				on_attach = function()
 					require("ltex_extra").setup({
 						load_langs = { "en-US", "de-AT" },
-						path = ".vscode", -- be nice to other people
+						path = ".ltex",
 					})
 				end,
 				settings = {
-					ltex = {
-						language = "en-US",
-						dictionary = {
-							["en-US"] = words() or {},
-						},
-					},
+					ltex = { language = "en-US" },
 				},
-				capabilities = capabilities,
-				-- flags = lspconfig.lsp_flags,
 			})
+			vim.lsp.enable({ "ltex_plus", "texlab" })
 		end,
 	},
 }
