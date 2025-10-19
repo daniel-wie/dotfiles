@@ -31,14 +31,16 @@ return {
 				"git_rebase",
 				"gitcommit",
 				"gitignore",
-				"powershell",
 				"toml",
 				"yaml",
+				"json",
 				"bash",
+				"powershell",
 				"latex", -- For render-markdown.nvim
 				"html",
-				"json",
 				"regex",
+				"c",
+				"query",
 			},
 		},
 		config = function(_, opts)
