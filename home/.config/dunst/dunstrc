@@ -1,0 +1,32 @@
+# See dunst(5) for all configuration options
+# Default config at /etc/dunst/dunstrc
+# vim: ft=cfg
+
+[global]
+    follow = keyboard
+    origin = top-center
+    offset = 0x15
+	gap_size = 5
+	corner_radius = 5
+    font = DejaVuSansM Nerd Font Mono 11
+    format = "<b>%a: %s</b>\n%b"
+    stack_duplicates = true
+    enable_recursive_icon_lookup = true
+    icon_theme = Adwaita
+    sticky_history = false
+    dmenu = /usr/bin/wofi --show dmenu
+    mouse_left_click = do_action
+    mouse_middle_click = context
+    mouse_right_click = close_current
+    separator_color= frame
+    frame_color = "#b4befe" # lavender
+    highlight = "#b4befe" # lavender
+    background = "#1e1e2e" # base
+    foreground = "#cdd6f4" # text
+
+[urgency_normal]
+    timeout = 10
+
+[urgency_critical]
+    frame_color = "#f38ba8" # red
+    timeout = 0
