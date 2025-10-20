@@ -10,7 +10,7 @@
   "modules-right": ["tray", "cpu", "memory", "pulseaudio", "backlight", "battery"],
   // Modules configuration
   "sway/workspaces": {
-    "all-outputs": true,
+    "all-outputs": false,
   },
   "tray": {
     // "icon-size": 21,
