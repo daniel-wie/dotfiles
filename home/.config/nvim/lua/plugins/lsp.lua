@@ -7,7 +7,6 @@ return {
 				"prettierd", -- Markdown formatting
 				"stylua", -- Lua formatting
 				"tex-fmt", -- TeX formatting
-				"black", -- Python formatting
 				"shfmt", -- Shell formatting
 			},
 		},
@@ -34,6 +33,7 @@ return {
 					"texlab",
 					"ltex_plus",
 					"pyright",
+					"ruff",
 				},
 			})
 		end,
@@ -60,7 +60,7 @@ return {
 			vim.lsp.enable("julials")
 
 			-- Python
-			vim.lsp.enable("pyright")
+			vim.lsp.enable({ "pyright", "ruff" })
 
 			-- LaTeX
 			vim.lsp.config("ltex_plus", {
