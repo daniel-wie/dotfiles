@@ -24,9 +24,7 @@ return {
 			},
 		},
 		indent = {
-			animate = {
-				enabled = false,
-			},
+			enabled = true,
 		},
 		picker = {
 			-- list pickers with `:lua Snacks.picker.pick()`
