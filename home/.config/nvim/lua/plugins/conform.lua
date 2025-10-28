@@ -19,7 +19,7 @@ return {
 		formatters_by_ft = {
 			lua = { "stylua" },
 			markdown = { "prettierd" },
-			python = { "black" },
+			python = { "ruff_fix", "ruff_format", "ruff_organize_imports" },
 			sh = { "shfmt" },
 			tex = { "tex-fmt" },
 		},
