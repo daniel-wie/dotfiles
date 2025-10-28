@@ -20,3 +20,7 @@ vim.opt.spelloptions = { "camel" } -- camel case treated as separate word
 vim.opt.winborder = "rounded" -- Style of floating windows
 vim.opt.shortmess:append({ I = true }) -- Don't give intro message when starting Vim
 vim.opt.signcolumn = "yes" -- Always show signcolumn
+vim.diagnostic.config({
+	virtual_text = { spacing = 0 }, -- Show diagnostics at end of line
+	severity_sort = true, -- Sort by severity
+})
