@@ -21,7 +21,7 @@ return {
 			markdown = { "prettierd" },
 			python = { "ruff_fix", "ruff_format", "ruff_organize_imports" },
 			sh = { "shfmt" },
-			tex = { "tex-fmt" },
+			tex = { "latexindent" },
 		},
 		formatters = {
 			shfmt = {

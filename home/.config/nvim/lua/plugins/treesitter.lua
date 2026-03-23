@@ -41,6 +41,7 @@ return {
 				"regex",
 				"c",
 				"query",
+				"latex",
 			},
 		},
 		config = function(_, opts)
