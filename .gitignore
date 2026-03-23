@@ -1,1 +1,5 @@
-Manifest.toml
+Manifest*.toml
+
+# zsh
+.zsh_plugins.zsh
+.zcompdump

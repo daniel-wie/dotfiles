@@ -49,3 +49,5 @@ if [ -f ~/.bash_aliases ]; then
 fi
 
 eval "$(starship init bash)"
+
+. "$HOME/.local/share/../bin/env"

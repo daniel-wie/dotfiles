@@ -1,0 +1,14 @@
+#!/bin/sh
+# vim: filetype=sh
+
+# Set PATH by editing `path` variable.
+# See <https://zsh.sourceforge.io/Guide/zshguide02.html#l24>.
+# shellcheck disable=SC3044
+typeset -U path
+# shellcheck disable=SC2206,SC3030
+
+path=(~/.local/bin ~/.juliaup/bin ~/.local/texlive/2026/bin/x86_64-linux ~/.local/gurobi1300/linux64/bin $path)
+
+# Load environment variables
+# shellcheck source=/dev/null
+. ~/.config/shell/environment
