@@ -1,0 +1,4 @@
+[Desktop Entry]
+Type=Application
+Name=JupyterLab
+Exec=uv run --with jupyter --with jupyterlab-vim jupyter lab
