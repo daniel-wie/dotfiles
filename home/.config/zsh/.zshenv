@@ -7,7 +7,7 @@
 typeset -U path
 # shellcheck disable=SC2206,SC3030
 
-path=(~/.local/bin ~/.juliaup/bin ~/.local/texlive/2026/bin/x86_64-linux ~/.local/gurobi1300/linux64/bin $path)
+path=(~/.local/bin ~/.juliaup/bin ~/.julia/bin ~/.local/texlive/2026/bin/x86_64-linux ~/.local/gurobi1300/linux64/bin $path)
 
 # Load environment variables
 # shellcheck source=/dev/null
