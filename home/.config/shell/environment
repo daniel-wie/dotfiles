@@ -37,3 +37,6 @@ export SUSPEND_COMMAND="systemctl suspend"
 # PythonCall.jl
 export JULIA_CONDAPKG_BACKEND="Null"
 export JULIA_PYTHONCALL_EXE="@venv"
+
+# ripgrep
+export RIPGREP_CONFIG_PATH="$XDG_CONFIG_HOME/ripgrep/.ripgreprc"
