@@ -1,0 +1,10 @@
+[user]
+	name = Daniel Wieser
+	email = daniel.wieser@ait.ac.at
+	signingkey = /home/dwieser/.ssh/id_ed25519.pub
+[init]
+	defaultBranch = main
+[gpg]
+	format = ssh
+[commit]
+	gpgsign = true
