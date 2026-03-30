@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Teams for Linux (TU Delft)
+Exec=teams-for-linux --closeAppOnCross=true --class=teams-tudelft --trayIconEnabled=false --appTitle="Teams for Linux (TU Delft)" --user-data-dir=%h/.config/teams-tudelft
+Icon=teams-tudelft
+Terminal=false
+Type=Application
+Categories=Network;InstantMessaging;
+StartupWMClass=teams-tudelft
