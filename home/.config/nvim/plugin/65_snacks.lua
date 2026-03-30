@@ -24,6 +24,9 @@ require("snacks").setup({
 	indent = {
 		enabled = true,
 	},
+	notifier = {
+		enabled = true,
+	},
 	picker = {
 		-- list pickers with `:lua Snacks.picker.pick()`
 		enabled = true,
