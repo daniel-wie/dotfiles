@@ -15,7 +15,19 @@ floating_modifier $mod normal
 bindsym $mod+Shift+c reload
 
 # Exit sway (logs you out of your Wayland session)
-bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+bindsym $mod+Shift+e exec swaynag -t warning -m 'Do you really want to exit sway?' -B 'Yes, exit sway!' 'swaymsg exit'
+
+# Lock screen
+bindsym $mod+Shift+w exec swaylock
+
+# Suspend
+bindsym $mod+Shift+s exec systemctl suspend
+
+# Shut down
+bindsym $mod+Shift+p exec swaynag -t warning -m 'Do you really want to shut down?' -B 'Yes, shut down!' 'shutdown now'
+
+# Reboot
+bindsym $mod+Shift+z exec swaynag -t warning -m 'Do you really want to reboot?' -B 'Yes, reboot!' 'systemctl reboot'
 
 # Brightness control
 bindsym XF86MonBrightnessUp exec brightnessctl s 5%+

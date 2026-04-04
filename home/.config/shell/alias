@@ -13,3 +13,6 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # slurm
 alias sq='squeue'
 alias squ='squeue -u $USER'
+
+# copilot
+alias copilot='copilot --disallow-temp-dir'
