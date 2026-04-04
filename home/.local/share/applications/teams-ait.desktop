@@ -1,6 +1,6 @@
 [Desktop Entry]
 Name=Teams for Linux (AIT)
-Exec=teams-for-linux --closeAppOnCross=true --class=teams-ait --trayIconEnabled=false --appTitle="Teams for Linux (AIT)" --user-data-dir=%h/.config/teams-ait
+Exec=teams-for-linux --closeAppOnCross=true --class=teams-ait --trayIconEnabled=false --appTitle="Teams for Linux (AIT)" --user-data-dir=/home/dwieser/.config/teams-ait
 Icon=teams-ait
 Terminal=false
 Type=Application
