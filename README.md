@@ -55,11 +55,21 @@ Optional:
 - [ ] Set up password manager
 - [x] Set up shell prompt
 - [x] Style shell prompt
-- [ ] Change to zsh?
+- [x] Change to zsh?
 - [ ] Set up SSD trim
 - [x] Set up AUR
 - [ ] Fix rendering of italics
-- [ ] Style display manger
+- [x] Style display manger
 - [ ] Set up firewall?
 - [ ] nvim: replace markdown-preview
 - [x] Install julia.
+- [ ] Migrate from greetd to sddm (no GTK).
+
+## SDDM
+
+Theme: [Catppuccin Mocha](https://github.com/catppuccin/sddm)
+
+The theme directory needs to be copied manually to `/usr/share/sddm/themes/`. Because it
+requires Wayland, sddm is started through sway with an
+[`empty configuration file`](./etc/sway-sddm/config). I don't know if it makes sense to
+set some specific settings, but it seems to be fine.
