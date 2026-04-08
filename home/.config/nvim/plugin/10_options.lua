@@ -23,4 +23,4 @@ vim.opt.winborder = "rounded" -- Style of floating windows
 vim.opt.wrap = false -- Line wrap
 
 -- Show diagnostics below line
-vim.diagnostic.config({ virtual_lines = { current_line = true } })
+vim.diagnostic.config({ virtual_text = { current_line = true } })
