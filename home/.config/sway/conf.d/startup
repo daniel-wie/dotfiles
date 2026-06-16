@@ -1,2 +1,5 @@
 # Start clipboard manager
-exec uwsm app -- wl-paste --watch cliphist store
+exec wl-paste --watch cliphist store
+
+# Start status bar
+exec waybar
