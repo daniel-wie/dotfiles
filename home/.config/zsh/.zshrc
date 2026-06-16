@@ -33,5 +33,3 @@ fi
 
 # Starship
 eval "$(starship init zsh)"
-
-. "$HOME/.local/share/../bin/env"
