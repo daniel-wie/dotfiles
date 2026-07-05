@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+source "$HOME/.local/share/vocal-whisper/.venv/bin/activate"
+
+/usr/bin/nvim "$@"
