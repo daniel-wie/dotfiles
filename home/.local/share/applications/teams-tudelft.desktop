@@ -6,3 +6,4 @@ Terminal=false
 Type=Application
 Categories=Network;InstantMessaging;
 StartupWMClass=teams-tudelft
+MimeType=x-scheme-handler/msteams;
