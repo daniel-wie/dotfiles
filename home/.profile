@@ -22,9 +22,6 @@ export INFOPATH="$INFOPATH:/usr/local/texlive/2025/texmf-dist/doc/info"
 # julia
 export PATH="$HOME/.juliaup/bin:$PATH"
 
-# nvm
-export NVM_DIR="$HOME/.config/nvm"
-
 # Default programs
 # https://wiki.archlinux.org/title/Environment_variables#Default_programs
 export BROWSER="firefox"
