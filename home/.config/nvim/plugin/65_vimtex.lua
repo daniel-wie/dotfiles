@@ -15,6 +15,5 @@ else
 end
 
 vim.g.vimtex_compiler_latexmk = {
-	aux_dir = "build",
-	out_dir = "",
+	build_dir = "build",
 }
