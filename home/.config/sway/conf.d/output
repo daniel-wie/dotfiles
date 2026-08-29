@@ -5,6 +5,8 @@ output * bg $HOME/.dotfiles/img/bg.jpg fill
 set $laptop eDP-1
 set $msi "Microstep MSI MD342CQP PC5H275200620"
 set $left_14 "Dell Inc. DELL U2412M Y1H5T1B10H2L"
+set $left_10 "Dell Inc. DELL P2422H 5RG92V3"
+set $right_10 "Dell Inc. DELL U2424HE 4DXY3X3"
 
 # Homeoffice
 output $laptop resolution 1920x1080 position 0,0
@@ -23,19 +25,20 @@ workspace 9 output $msi
 workspace 10 output $msi
 
 # AIT 
-output DP-3 resolution 1920x1080 position 1920,0
-output DP-4 resolution 1920x1080 position 3840,0
+# output DP-3 resolution 1920x1080 position 1920,0
+# output DP-4 resolution 1920x1080 position 3840,0
 
-workspace 3 output DP-3
-workspace 4 output DP-3
-workspace 5 output DP-3
-workspace 6 output DP-3
-workspace 7 output DP-4
-workspace 8 output DP-4
-workspace 9 output DP-4
-workspace 10 output DP-4
+output $left_10 resolution 1920x1080 position -3840,0
+output $right_10 mode 1920x1080@120Hz position -1920,0
 
-output $left_14 resolution 1920x1200 position 1920,0
+workspace 3 output $left_10
+workspace 4 output $left_10
+workspace 5 output $left_10
+workspace 6 output $left_10
+workspace 7 output $right_10
+workspace 8 output $right_10
+workspace 9 output $right_10
+workspace 10 output $right_10
 
 # Clamshell mode (https://github.com/swaywm/sway/wiki#clamshell-mode)
 bindswitch --reload --locked lid:on output $laptop disable
