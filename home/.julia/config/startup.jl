@@ -5,11 +5,12 @@ ENV["JULIA_PKG_USE_CLI_GIT"] = true
 ENV["PYCALL_JL_RUNTIME_PYTHON"] = Sys.which("python")
 
 if isinteractive()
-    # Start Revise automatically
+    # Start Revise and Infiltrate automatically
     try
+        using Infiltrator
         using Revise
     catch e
-        @warn "Error initializing Revise" exception = (e, catch_backtrace())
+        @warn "Error loading modules" exception = (e, catch_backtrace())
     end
 
     # Activate current environment if existing
